@@ -1,9 +1,11 @@
-[gd_scene load_steps=22 format=3 uid="uid://bis2ogf8psp4o"]
+[gd_scene load_steps=25 format=3 uid="uid://bis2ogf8psp4o"]
 
 [ext_resource type="Texture2D" uid="uid://5dwl83p3472w" path="res://icon.svg" id="1_qiqor"]
 [ext_resource type="Script" path="res://TileMap_copier.gd" id="2_ng6w5"]
 [ext_resource type="Script" path="res://player.gd" id="3_36dg4"]
 [ext_resource type="Texture2D" uid="uid://d30wentgwcudp" path="res://circle.png" id="4_rd8nm"]
+[ext_resource type="Script" path="res://GameTimer.gd" id="5_lbwl2"]
+[ext_resource type="Script" path="res://sendData.gd" id="6_1tox2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lrvuk"]
 texture = ExtResource("1_qiqor")
@@ -188,6 +190,9 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2k04t"]
 size = Vector2(128, 128)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_tx2xk"]
+radius = 134.0
+
 [node name="Node2D" type="Node2D"]
 
 [node name="TileMap_höger" type="TileMap" parent="."]
@@ -221,6 +226,7 @@ parameters/blend_position = 0.0
 texture = ExtResource("1_qiqor")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="player"]
+visible = false
 position = Vector2(0, -25)
 amount = 256
 process_material = SubResource("ParticleProcessMaterial_28p73")
@@ -244,3 +250,18 @@ shape = SubResource("RectangleShape2D_2k04t")
 [node name="Camera2D" type="Camera2D" parent="player"]
 position_smoothing_enabled = true
 position_smoothing_speed = 12.0
+
+[node name="complete" type="Area2D" parent="."]
+position = Vector2(689, -92)
+script = ExtResource("5_lbwl2")
+metadata/_edit_group_ = true
+
+[node name="HTTPRequest" type="HTTPRequest" parent="complete"]
+script = ExtResource("6_1tox2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="complete"]
+shape = SubResource("CircleShape2D_tx2xk")
+
+[connection signal="body_entered" from="complete" to="complete" method="_on_body_entered"]
+[connection signal="complete" from="complete" to="complete/HTTPRequest" method="_on_complete_complete"]
+[connection signal="request_completed" from="complete/HTTPRequest" to="complete/HTTPRequest" method="_on_request_completed"]

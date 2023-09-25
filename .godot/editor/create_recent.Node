@@ -1,4 +1,13 @@
+Button
+Label
+VBoxContainer
+Panel
+CanvasLayer
+HBoxContainer
+HTTPRequest
 CollisionShape2D
+Area2D
+Timer
 StaticBody2D
 GPUParticles2D
 AnimationPlayer

@@ -1,2 +1,4 @@
 res://main.tscn
-res://player.gd
+res://sendData.gd
+res://slutskärm.tscn
+res://nätverksfel.tscn
