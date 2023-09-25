@@ -4,7 +4,8 @@ extends HTTPRequest
 var my_full_url = "https://docs.google.com/forms/d/e/1FAIpQLSea1QXNt3LSCT-HTK8A6qwb1yEB__LGdFTuDcD8N9srE_HBiw/formResponse"
 var my_data = {
 	"entry.172221692" : OS.get_unique_id(),
-	"entry.953122580" : 0.0}
+	"entry.953122580" : 0.0,
+	"entry.2104287383" : "Höger"}
 var headers = ["Content-Type: application/x-www-form-urlencoded"]
 var http = HTTPClient.new()
 
