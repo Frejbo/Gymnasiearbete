@@ -1,4 +1,5 @@
 res://main.tscn
-res://sendData.gd
 res://slutskärm.tscn
 res://nätverksfel.tscn
+res://animation.gd
+res://player.gd
