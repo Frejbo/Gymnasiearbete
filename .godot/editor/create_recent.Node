@@ -1,9 +1,10 @@
-AnimatedSprite2D
-Button
+CanvasGroup
 Label
 VBoxContainer
 Panel
 CanvasLayer
+AnimatedSprite2D
+Button
 HBoxContainer
 HTTPRequest
 CollisionShape2D
