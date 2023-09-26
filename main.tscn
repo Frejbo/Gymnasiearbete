@@ -1,7 +1,7 @@
 [gd_scene load_steps=101 format=3 uid="uid://bis2ogf8psp4o"]
 
+[ext_resource type="Script" path="res://main.gd" id="1_lnie1"]
 [ext_resource type="Texture2D" uid="uid://5dwl83p3472w" path="res://icon.svg" id="1_qiqor"]
-[ext_resource type="Script" path="res://TileMap_copier.gd" id="2_ng6w5"]
 [ext_resource type="Script" path="res://player.gd" id="3_36dg4"]
 [ext_resource type="Texture2D" uid="uid://d30wentgwcudp" path="res://circle.png" id="4_rd8nm"]
 [ext_resource type="Texture2D" uid="uid://d0l6c4cjavq7i" path="res://aseprite/cat idle/cat_idleshaded1.png" id="5_26jpf"]
@@ -509,18 +509,12 @@ animations = [{
 radius = 134.0
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_lnie1")
 
-[node name="TileMap_höger" type="TileMap" parent="."]
+[node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_yx22o")
 format = 2
 layer_0/tile_data = PackedInt32Array(0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, -196600, 0, 0, -196599, 0, 0, -393211, 0, 0, -393212, 0, 0, -589813, 0, 0, -589812, 0, 0, -589811, 0, 0)
-
-[node name="TileMap_vänster" type="TileMap" parent="."]
-scale = Vector2(-1, 1)
-tile_set = SubResource("TileSet_yx22o")
-format = 2
-layer_0/tile_data = PackedInt32Array(0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, -196600, 0, 0, -196599, 0, 0, -393211, 0, 0, -393212, 0, 0, -589813, 0, 0, -589812, 0, 0, -589811, 0, 0)
-script = ExtResource("2_ng6w5")
 
 [node name="player" type="CharacterBody2D" parent="."]
 position = Vector2(0, -64)
