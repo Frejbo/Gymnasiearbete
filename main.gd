@@ -6,4 +6,5 @@ extends Node2D
 func _ready():
 	if direction == "Vänster":
 		$TileMap.scale.x = -1
-		$complete.position.x = -$complete.position.x
+		$complete.position.x *= -1
+		$player/AnimatedSprite2D.scale.x *= -1

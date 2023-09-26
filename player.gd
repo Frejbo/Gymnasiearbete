@@ -43,17 +43,17 @@ func move_horizontally():
 	var x = velocity.x
 		
 	var input = Input.get_axis("left", "right")
-	$AnimatedSprite2D.set_anim(input)
+#	$AnimatedSprite2D.set_anim(input)
 	speed = clamp(speed + (input * MAX_SPEED * ACCELERATION), -MAX_SPEED, MAX_SPEED)
 	
 	if !input:
 		speed *= DEACCELERATION
 #		slowing down after key is released
 	velocity.x = speed
-	$AnimationTree.set("parameters/blend_position", speed / MAX_SPEED)
+#	$AnimationTree.set("parameters/blend_position", speed / MAX_SPEED)
 
 func _input(event) -> void:
 	# Jumping
 	if Input.is_action_pressed("jump") and is_on_floor():
 		velocity.y = -jump_velocity
-		
+		$AnimatedSprite2D.jump()
