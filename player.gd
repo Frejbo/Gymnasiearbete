@@ -48,6 +48,7 @@ func move_horizontally():
 	
 	if !input:
 		speed *= DEACCELERATION
+	
 #		slowing down after key is released
 	velocity.x = speed
 #	$AnimationTree.set("parameters/blend_position", speed / MAX_SPEED)
