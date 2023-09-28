@@ -596,7 +596,7 @@ texture = ExtResource("2_w46cc")
 1:8/0/terrains_peering_bit/top_side = 0
 
 [sub_resource type="TileSet" id="TileSet_yx22o"]
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 3
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Grass"
 terrain_set_0/terrain_0/color = Color(0.180392, 0.576471, 0, 1)
@@ -765,7 +765,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
-"speed": 30.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -794,7 +794,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"jump",
-"speed": 15.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -915,8 +915,16 @@ position_smoothing_speed = 12.0
 texture_filter = 1
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_1a0k2")
-animation = &"idle"
+animation = &"running"
 script = ExtResource("79_jvlit")
+
+[node name="front" type="Marker2D" parent="player/AnimatedSprite2D"]
+position = Vector2(6, 15)
+scale = Vector2(0.25, 0.25)
+
+[node name="back" type="Marker2D" parent="player/AnimatedSprite2D"]
+position = Vector2(-10, 15)
+scale = Vector2(0.25, 0.25)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="player"]
 polygon = PackedVector2Array(-32, 64, 24, 64, 40, 48, 40, 24, 48, 16, 48, 0, 40, -8, 24, -8, 8, 8, -32, 8, -40, 32, -40, 48)
@@ -980,6 +988,7 @@ theme_override_font_sizes/font_size = 12
 text = "Skickar in ditt resultat, stäng inte av spelet än."
 horizontal_alignment = 1
 
+[connection signal="frame_changed" from="player/AnimatedSprite2D" to="player/AnimatedSprite2D" method="_on_frame_changed"]
 [connection signal="body_entered" from="complete" to="complete" method="_on_body_entered"]
 [connection signal="complete" from="complete" to="complete/HTTPRequest" method="_on_complete_complete"]
 [connection signal="request_completed" from="complete/HTTPRequest" to="complete/HTTPRequest" method="_on_request_completed"]

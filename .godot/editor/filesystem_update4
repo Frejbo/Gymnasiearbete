@@ -2,3 +2,5 @@ res://slutskärm.tscn
 res://nätverksfel.tscn
 res://main.tscn
 res://animation.gd
+res://dirt_particle.tscn
+res://dirt_particle.gd
