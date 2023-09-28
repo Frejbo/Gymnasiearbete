@@ -1,6 +1,6 @@
 extends AnimatedSprite2D
 
-var standardScale = scale.x
+var standardScale = scale
 var landing : bool = false
 
 func jump():
@@ -8,8 +8,6 @@ func jump():
 	play("jump")
 
 func _process(_delta):
-	
-	
 	var axis = Input.get_axis("left", "right")
 	if $"..".is_on_floor():
 		if landing:
@@ -24,10 +22,12 @@ func _process(_delta):
 	else:
 		if not landing:
 			landing = true
+			if animation == "jump" && is_playing(): return
+			play("fall")
 	if axis > 0:
-		scale.x = standardScale
+		scale.x = standardScale.x
 	elif axis < 0:
-		scale.x = -standardScale
+		scale.x = -standardScale.x
 	
 	
 	if (animation == "jump" or animation == "landing_to_idle" or animation == "landing_to_running") && is_playing() or landing:# && !$"..".is_on_floor():
@@ -38,6 +38,6 @@ func _process(_delta):
 		play("idle")
 		return
 	elif $"..".is_on_floor():
+		if animation != "running":
+			stop()
 		play("running")
-	
-	

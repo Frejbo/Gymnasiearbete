@@ -1,6 +1,4 @@
-res://main.tscn
-res://main.gd
 res://slutskärm.tscn
 res://nätverksfel.tscn
+res://main.tscn
 res://animation.gd
-res://player.gd
