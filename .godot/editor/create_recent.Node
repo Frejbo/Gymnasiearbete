@@ -1,5 +1,7 @@
-CPUParticles2D
 GPUParticles2D
+ParallaxLayer
+GPUParticlesAttractorSphere3D
+CPUParticles2D
 WorldEnvironment
 Marker2D
 AnimationPlayer

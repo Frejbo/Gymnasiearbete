@@ -1,8 +1,7 @@
+res://main.tscn
+res://mist.gd
 res://slutskärm.tscn
 res://nätverksfel.tscn
-res://main.tscn
-res://animation.gd
 res://dirt_particle.tscn
-res://dirt_particle.gd
-res://fog.gdshader
-res://player.gd
+res://main.gd
+res://pixelate.gdshader

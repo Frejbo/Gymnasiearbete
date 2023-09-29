@@ -1,7 +1,8 @@
-[gd_scene load_steps=87 format=3 uid="uid://bis2ogf8psp4o"]
+[gd_scene load_steps=85 format=3 uid="uid://bis2ogf8psp4o"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_lnie1"]
 [ext_resource type="Texture2D" uid="uid://saxx1dhgt6x4" path="res://smoke_particle.png" id="2_4wu4a"]
+[ext_resource type="Material" uid="uid://cij4qqdh1c1cu" path="res://mist.tres" id="2_ub1yd"]
 [ext_resource type="Texture2D" uid="uid://dlaxv7hm1gp5m" path="res://aseprite/proper_tileset_dirtgrass.png" id="2_w46cc"]
 [ext_resource type="Script" path="res://player.gd" id="3_36dg4"]
 [ext_resource type="Texture2D" uid="uid://d0l6c4cjavq7i" path="res://aseprite/cat idle/cat_idleshaded1.png" id="5_26jpf"]
@@ -78,27 +79,6 @@
 [ext_resource type="Texture2D" uid="uid://b1u8f6y8fxylc" path="res://aseprite/cat running/cat_running8.png" id="77_l27jp"]
 [ext_resource type="Texture2D" uid="uid://cje4xj34jovwa" path="res://aseprite/cat running/cat_running9.png" id="78_oh6cl"]
 [ext_resource type="Script" path="res://animation.gd" id="79_jvlit"]
-
-[sub_resource type="Gradient" id="Gradient_3r778"]
-offsets = PackedFloat32Array(0, 0.219231, 0.761538, 1)
-colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 0.607843, 1, 1, 1, 0.607843, 1, 1, 1, 0)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_6c0xs"]
-gradient = SubResource("Gradient_3r778")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_no2yc"]
-emission_shape = 3
-emission_box_extents = Vector3(256, 1, 1)
-particle_flag_disable_z = true
-angular_velocity_min = -10.0
-angular_velocity_max = 10.0
-orbit_velocity_min = 0.0
-orbit_velocity_max = 0.0
-radial_accel_max = 20.0
-scale_max = 3.0
-color = Color(1, 1, 1, 0.294118)
-color_ramp = SubResource("GradientTexture1D_6c0xs")
-turbulence_enabled = true
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i2wcn"]
 texture = ExtResource("2_w46cc")
@@ -913,15 +893,16 @@ corner_radius_bottom_left = 20
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_lnie1")
 
-[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+[node name="mist" type="GPUParticles2D" parent="."]
 z_index = 1
 texture_filter = 2
-position = Vector2(50, 0)
-amount = 256
-process_material = SubResource("ParticleProcessMaterial_no2yc")
+position = Vector2(1304, 0)
+amount = 400
+process_material = ExtResource("2_ub1yd")
 texture = ExtResource("2_4wu4a")
 lifetime = 10.0
-preprocess = 10.0
+randomness = 0.3
+fixed_fps = 15
 
 [node name="TileMap" type="TileMap" parent="."]
 z_index = 1
