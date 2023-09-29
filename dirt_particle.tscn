@@ -1,0 +1,71 @@
+[gd_scene load_steps=8 format=3 uid="uid://bwmtckid8iec5"]
+
+[ext_resource type="Script" path="res://dirt_particle.gd" id="1_01o6p"]
+[ext_resource type="Texture2D" uid="uid://djm0xgqtaqeub" path="res://aseprite/dirt_particle.png" id="1_5cuqm"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_surf1"]
+friction = 0.8
+bounce = 0.8
+absorbent = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qb7bl"]
+
+[sub_resource type="Animation" id="Animation_b5ex7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_cxvha"]
+resource_name = "fade out"
+length = 6.0
+step = 1.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(3, 6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uf3wa"]
+_data = {
+"RESET": SubResource("Animation_b5ex7"),
+"fade out": SubResource("Animation_cxvha")
+}
+
+[node name="dirt_particle" type="RigidBody2D"]
+collision_layer = 0
+collision_mask = 2
+mass = 0.01
+physics_material_override = SubResource("PhysicsMaterial_surf1")
+script = ExtResource("1_01o6p")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("1_5cuqm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_qb7bl")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_uf3wa")
+}
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
