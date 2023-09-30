@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=3 uid="uid://btqco0gk4io5m"]
+
+[ext_resource type="Texture2D" uid="uid://de040sllplapb" path="res://aseprite/mountains back.png" id="1_80vg3"]
+[ext_resource type="Texture2D" uid="uid://cvgifcffbron6" path="res://aseprite/mountains middle.png" id="2_6mx5s"]
+[ext_resource type="Texture2D" uid="uid://c7rl0ho6u2cyl" path="res://aseprite/mountains front.png" id="3_a64ag"]
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+offset = Vector2(1024, 0)
+transform = Transform2D(1, 0, 0, 1, 1024, 0)
+scroll_ignore_camera_zoom = true
+
+[node name="Back" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(2048, 0)
+
+[node name="MountainsBack" type="Sprite2D" parent="Back"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(0, -500)
+scale = Vector2(4, 4)
+texture = ExtResource("1_80vg3")
+
+[node name="Middle" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(1.1, 1.05)
+motion_mirroring = Vector2(2048, 0)
+
+[node name="MountainsMiddle" type="Sprite2D" parent="Middle"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(0, -500)
+scale = Vector2(4, 4)
+texture = ExtResource("2_6mx5s")
+
+[node name="Front" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(1.2, 1.1)
+motion_mirroring = Vector2(2048, 0)
+
+[node name="MountainsFront" type="Sprite2D" parent="Front"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(0, -500)
+scale = Vector2(4, 4)
+texture = ExtResource("3_a64ag")
