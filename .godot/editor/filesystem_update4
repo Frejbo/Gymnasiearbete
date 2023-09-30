@@ -1,4 +1,6 @@
-res://main.tscn
+res://background.tscn
 res://mist.tres
 res://slutskärm.tscn
 res://nätverksfel.tscn
+res://main.tscn
+res://main.gd

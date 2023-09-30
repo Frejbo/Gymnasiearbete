@@ -1,6 +1,6 @@
 Sprite2D
-ParallaxBackground
 ParallaxLayer
+ParallaxBackground
 TileMap
 GPUParticles2D
 GPUParticlesAttractorSphere3D
