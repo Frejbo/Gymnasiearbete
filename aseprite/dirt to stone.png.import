@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://r4fsabk4i5do"
-path="res://.godot/imported/smoke_particle.png-2af9cbaa4a935c239d404ea2402bff45.ctex"
+uid="uid://d0k5kyaocbta4"
+path="res://.godot/imported/dirt to stone.png-0c0d0b86b0963f6873a2502cc16e69e4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://smoke_particle.png"
-dest_files=["res://.godot/imported/smoke_particle.png-2af9cbaa4a935c239d404ea2402bff45.ctex"]
+source_file="res://aseprite/dirt to stone.png"
+dest_files=["res://.godot/imported/dirt to stone.png-0c0d0b86b0963f6873a2502cc16e69e4.ctex"]
 
 [params]
 

@@ -8,20 +8,18 @@ enum legs {LEGS_BOTH, LEG_BACK, LEG_FRONT}
 func jump():
 	stop()
 	play("jump")
-	spawn_footstep(legs.LEG_BACK)
+	spawn_footstep(legs.LEG_BACK, 10)
 
 func _process(_delta):
 	var axis = Input.get_axis("left", "right")
 	if $"..".is_on_floor():
 		if landing:
-			spawn_footstep(legs.LEG_FRONT)
+			spawn_footstep(legs.LEG_FRONT, 10, 150)
 			# landar
 			if axis == 0:
 				play("landing_to_idle")
-				print("Landing to idle")
 			else:
 				print("Landing to run")
-				play("landing_to_running")
 			landing = false
 	else:
 		if not landing:
@@ -52,29 +50,55 @@ func _on_frame_changed():
 	if not $"..".is_on_floor(): return
 	
 	if frame == 4:
-		spawn_footstep(legs.LEG_FRONT)
+		spawn_footstep(legs.LEG_FRONT, 3)
 	elif frame == 7:
-		spawn_footstep(legs.LEG_BACK)
+		spawn_footstep(legs.LEG_BACK, 5)
 
 
-func spawn_footstep(leg:legs = legs.LEGS_BOTH) -> void:
-	var particle := preload("res://dirt_particle.tscn").instantiate()
-	
+func spawn_footstep(leg:legs = legs.LEGS_BOTH, amount : int = 1, spread : float = 50) -> void:
+	for i in range(amount):
+		var particle := preload("res://dirt_particle.tscn").instantiate()
+		randomize()
+		var force = Vector2(randf_range(($"..".velocity.x / 50) * scale.x - spread, ($"..".velocity.x / 50) * scale.x + spread), randf_range(-150, -250))
+		match leg:
+			legs.LEG_BACK:
+				particle.set_color(get_footstep_color(legs.LEG_BACK))
+				particle.position = $back.global_position
+				$"../..".add_child(particle)
+				particle.apply_impulse(force)
+			legs.LEG_FRONT:
+				particle.set_color(get_footstep_color(legs.LEG_FRONT))
+				particle.position = $front.global_position
+				$"../..".add_child(particle)
+				particle.apply_impulse(force)
+			legs.LEGS_BOTH:
+				particle.set_color(get_footstep_color(legs.LEG_BACK))
+				particle.position = $back.global_position
+				$"../..".add_child(particle)
+				particle.apply_impulse(force)
+				
+				particle = preload("res://dirt_particle.tscn").instantiate()
+				particle.set_color(get_footstep_color(legs.LEG_FRONT))
+				particle.position = $front.global_position
+				$"../..".add_child(particle)
+				particle.apply_impulse(force)
+
+
+const colors = {
+	1: Color.SADDLE_BROWN,
+	0: Color.DIM_GRAY
+}
+func get_footstep_color(leg:legs) -> Color:
+	var raycast : RayCast2D
 	match leg:
 		legs.LEG_BACK:
-			particle.position = $back.global_position
-			$"../..".add_child(particle)
-			particle.apply_impulse(Vector2(-10*scale.x, -200))
+			raycast = $back/RayCast2D
 		legs.LEG_FRONT:
-			particle.position = $front.global_position
-			$"../..".add_child(particle)
-			particle.apply_impulse(Vector2(-10*scale.x, -200))
-		legs.LEGS_BOTH:
-			particle.position = $back.global_position
-			$"../..".add_child(particle)
-			particle.apply_impulse(Vector2(-10*scale.x, -200))
-			
-			particle = preload("res://dirt_particle.tscn").instantiate()
-			particle.position = $front.global_position
-			$"../..".add_child(particle)
-			particle.apply_impulse(Vector2(-10*scale.x, -200))
+			raycast = $front/RayCast2D
+	
+	var tilemap := $"../../TileMap"
+	var local_point = tilemap.local_to_map(raycast.get_collision_point() / tilemap.scale)
+	var cell = tilemap.get_cell_source_id(1, local_point)
+	print(cell)
+	
+	return colors[cell]

@@ -10,6 +10,7 @@ transform = Transform2D(1, 0, 0, 1, 1024, 0)
 scroll_ignore_camera_zoom = true
 
 [node name="Back" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(1.2, 1.1)
 motion_mirroring = Vector2(2048, 0)
 
 [node name="MountainsBack" type="Sprite2D" parent="Back"]
@@ -31,7 +32,6 @@ scale = Vector2(4, 4)
 texture = ExtResource("2_6mx5s")
 
 [node name="Front" type="ParallaxLayer" parent="."]
-motion_scale = Vector2(1.2, 1.1)
 motion_mirroring = Vector2(2048, 0)
 
 [node name="MountainsFront" type="Sprite2D" parent="Front"]

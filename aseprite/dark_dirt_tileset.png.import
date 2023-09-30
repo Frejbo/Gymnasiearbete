@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://r4fsabk4i5do"
-path="res://.godot/imported/smoke_particle.png-2af9cbaa4a935c239d404ea2402bff45.ctex"
+uid="uid://dsbux165p5u8i"
+path="res://.godot/imported/dark_dirt_tileset.png-3d65926b8895237ee43a596af0acdf0b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://smoke_particle.png"
-dest_files=["res://.godot/imported/smoke_particle.png-2af9cbaa4a935c239d404ea2402bff45.ctex"]
+source_file="res://aseprite/dark_dirt_tileset.png"
+dest_files=["res://.godot/imported/dark_dirt_tileset.png-3d65926b8895237ee43a596af0acdf0b.ctex"]
 
 [params]
 

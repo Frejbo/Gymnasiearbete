@@ -9,6 +9,7 @@ bounce = 0.8
 absorbent = true
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qb7bl"]
+size = Vector2(4, 4)
 
 [sub_resource type="Animation" id="Animation_b5ex7"]
 length = 0.001
@@ -61,6 +62,7 @@ scale = Vector2(4, 4)
 texture = ExtResource("1_5cuqm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("RectangleShape2D_qb7bl")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
