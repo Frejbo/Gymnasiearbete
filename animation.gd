@@ -51,7 +51,7 @@ func _on_frame_changed():
 	
 	if frame == 4:
 		spawn_footstep(legs.LEG_FRONT, 3)
-	elif frame == 7:
+	elif frame == 8:
 		spawn_footstep(legs.LEG_BACK, 5)
 
 
@@ -99,6 +99,5 @@ func get_footstep_color(leg:legs) -> Color:
 	var tilemap := $"../../TileMap"
 	var local_point = tilemap.local_to_map(raycast.get_collision_point() / tilemap.scale)
 	var cell = tilemap.get_cell_source_id(1, local_point)
-	print(cell)
 	
 	return colors[cell]

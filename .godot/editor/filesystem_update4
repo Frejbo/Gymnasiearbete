@@ -1,10 +1,8 @@
-res://background.tscn
+res://main.tscn
 res://mist.tres
 res://slutskärm.tscn
 res://nätverksfel.tscn
-res://main.tscn
-res://main.gd
-res://tileset.gdshader
-res://animation.gd
+res://background.tscn
 res://dirt_particle.tscn
-res://dirt_particle.gd
+res://animation.gd
+res://main.gd
