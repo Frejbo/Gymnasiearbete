@@ -2831,7 +2831,7 @@ target_position = Vector2(0, 5)
 polygon = PackedVector2Array(-32, 52, 0, 60, 24, 52, 40, 44, 40, 28, 56, 12, 56, -4, 40, -12, 24, -12, 8, 4, -32, 4, -40, 28, -40, 44)
 
 [node name="complete" type="Area2D" parent="."]
-position = Vector2(4864, -552)
+position = Vector2(4040, -416)
 script = ExtResource("77_e2bsg")
 metadata/_edit_group_ = true
 
@@ -2890,6 +2890,8 @@ text = "Skickar in ditt resultat, stäng inte av spelet än."
 horizontal_alignment = 1
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("81_y8cg5")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
 
 [connection signal="frame_changed" from="player/AnimatedSprite2D" to="player/AnimatedSprite2D" method="_on_frame_changed"]
 [connection signal="body_entered" from="complete" to="complete" method="_on_body_entered"]

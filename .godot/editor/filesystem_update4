@@ -6,3 +6,4 @@ res://background.tscn
 res://dirt_particle.tscn
 res://animation.gd
 res://main.gd
+res://sendData.gd
