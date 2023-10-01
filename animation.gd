@@ -19,7 +19,7 @@ func _process(_delta):
 			if axis == 0:
 				play("landing_to_idle")
 			else:
-				print("Landing to run")
+				play("landing_to_running")
 			landing = false
 	else:
 		if not landing:
