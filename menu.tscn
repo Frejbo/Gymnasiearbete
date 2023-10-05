@@ -1,0 +1,61 @@
+[gd_scene load_steps=3 format=3 uid="uid://cvepx5nr3d3qn"]
+
+[ext_resource type="Script" path="res://menu.gd" id="1_5hrtl"]
+[ext_resource type="Script" path="res://description.gd" id="2_1ccrr"]
+
+[node name="menu" type="Control" node_paths=PackedStringArray("confirmationBox")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5hrtl")
+confirmationBox = NodePath("VBoxContainer/confirm")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -408.5
+offset_top = -71.5
+offset_right = 408.5
+offset_bottom = 71.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="titel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Gymnasiearbete"
+horizontal_alignment = 1
+
+[node name="description" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Du kommer få köra ett 2D plattformsspel.
+Ditt mål är att klara spelet så fort som möjligt.
+
+När du klickar start kommer du inte kunna starta spelet igen,
+endast en inskickning per person är tillåten."
+horizontal_alignment = 1
+visible_characters_behavior = 1
+visible_ratio = -0.00502513
+script = ExtResource("2_1ccrr")
+
+[node name="confirm" type="CheckBox" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Jag har läst ovanstående"
+
+[node name="start" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Starta"
+
+[connection signal="pressed" from="VBoxContainer/start" to="." method="_on_start_pressed"]
