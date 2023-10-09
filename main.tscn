@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=94 format=3 uid="uid://bis2ogf8psp4o"]
+=======
+[gd_scene load_steps=93 format=3 uid="uid://bis2ogf8psp4o"]
+>>>>>>> Stashed changes
 
 [ext_resource type="Script" path="res://main.gd" id="1_lnie1"]
 [ext_resource type="Texture2D" uid="uid://r4fsabk4i5do" path="res://smoke_particle.png" id="2_4wu4a"]
@@ -84,6 +88,7 @@
 [ext_resource type="Texture2D" uid="uid://cje4xj34jovwa" path="res://aseprite/cat running/cat_running9.png" id="78_oh6cl"]
 [ext_resource type="Script" path="res://animation.gd" id="79_jvlit"]
 [ext_resource type="PackedScene" uid="uid://btqco0gk4io5m" path="res://background.tscn" id="81_y8cg5"]
+[ext_resource type="PackedScene" uid="uid://dakaeu7hquafa" path="res://key.tscn" id="84_glnnk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_04u30"]
 resource_name = "Rock"
@@ -2936,6 +2941,12 @@ horizontal_alignment = 1
 [node name="ParallaxBackground" parent="." instance=ExtResource("81_y8cg5")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Key" parent="." instance=ExtResource("84_glnnk")]
+position = Vector2(2872, -356.381)
+
+[node name="Key2" parent="." instance=ExtResource("84_glnnk")]
+position = Vector2(248, -48)
 
 [connection signal="frame_changed" from="player/AnimatedSprite2D" to="player/AnimatedSprite2D" method="_on_frame_changed"]
 [connection signal="body_entered" from="complete" to="complete" method="_on_body_entered"]
