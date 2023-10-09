@@ -1,9 +1,10 @@
-res://main.tscn
-res://mist.tres
 res://slutskärm.tscn
+res://mist.tres
 res://nätverksfel.tscn
+res://main.tscn
 res://background.tscn
 res://dirt_particle.tscn
-res://animation.gd
-res://main.gd
-res://sendData.gd
+res://dirt_particle.gd
+res://menu.tscn
+res://menu.gd
+res://description.gd
