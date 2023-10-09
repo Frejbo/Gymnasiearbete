@@ -5,11 +5,13 @@ extends Control
 var game = preload("res://main.tscn")
 
 func _enter_tree():
-	print(FileAccess.file_exists("user://last"))
+	if FileAccess.file_exists("user://collected"):
+		print("Already submitted game")
+		# kan spela men inte submitta
 
 func _on_start_pressed():
 	if confirmationBox.button_pressed:
-		var file = FileAccess.open("user://last", FileAccess.WRITE)
+		var file = FileAccess.open("user://collected", FileAccess.WRITE)
 		file.close()
 		get_tree().change_scene_to_packed(game)
 	else:
