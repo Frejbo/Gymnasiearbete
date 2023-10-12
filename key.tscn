@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://1y5856xxbwk4"]
+[gd_scene load_steps=48 format=3 uid="uid://1y5856xxbwk4"]
 
 [ext_resource type="Texture2D" uid="uid://crhb0gxsi3yc5" path="res://aseprite/key.png" id="1_ou07f"]
 [ext_resource type="Script" path="res://key.gd" id="1_wcyfu"]
@@ -176,6 +176,21 @@ animations = [{
 "speed": 12.0
 }]
 
+[sub_resource type="Animation" id="Animation_dmcsu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_nv0sd"]
 resource_name = "bounce"
 length = 4.0
@@ -194,25 +209,25 @@ tracks/0/keys = {
 "values": [Vector2(0, 0), Vector2(0, -5)]
 }
 
-[sub_resource type="Animation" id="Animation_dmcsu"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6dem0"]
+_data = {
+"RESET": SubResource("Animation_dmcsu"),
+"bounce": SubResource("Animation_nv0sd")
+}
+
+[sub_resource type="Animation" id="Animation_gr4ps"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
+tracks/0/path = NodePath(".:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_6dem0"]
-_data = {
-"RESET": SubResource("Animation_dmcsu"),
-"bounce": SubResource("Animation_nv0sd")
+"values": [0.0]
 }
 
 [sub_resource type="Animation" id="Animation_odo5e"]
@@ -232,21 +247,6 @@ tracks/0/keys = {
 "values": [-0.610865, -0.785398, -0.654498, -0.872665, -0.785398, -0.959931]
 }
 
-[sub_resource type="Animation" id="Animation_gr4ps"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_stbhd"]
 _data = {
 "RESET": SubResource("Animation_gr4ps"),
@@ -257,10 +257,29 @@ _data = {
 blend_mode = 1
 
 [sub_resource type="Gradient" id="Gradient_x7p1e"]
-offsets = PackedFloat32Array(0.00769231, 0.119231, 0.634615, 1)
-colors = PackedColorArray(0.825314, 0.534085, 5.77569e-07, 0.137255, 0.823451, 0.7855, 7.70092e-07, 0.392157, 0.884139, 0.879044, 0, 0.290196, 1, 1, 1, 0)
+offsets = PackedFloat32Array(0.00769231, 0.234615, 0.603846, 1)
+colors = PackedColorArray(0.825314, 0.534085, 5.77569e-07, 0.137255, 0.823451, 0.7855, 7.70092e-07, 0.392157, 0.830044, 0.79351, 0.0373451, 0.377512, 1, 1, 1, 0)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_paej2"]
+gradient = SubResource("Gradient_x7p1e")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ae36r"]
+emission_shape = 3
+emission_box_extents = Vector3(1, 17, 1)
+spread = 180.0
+gravity = Vector3(0, 1, 0)
+scale_min = 0.5
+scale_max = 0.7
+color = Color(0.87451, 0.694118, 0, 0.4)
+color_ramp = SubResource("GradientTexture1D_paej2")
+hue_variation_min = -0.02
+hue_variation_max = 0.07
+turbulence_enabled = true
+turbulence_noise_strength = 0.5
+turbulence_noise_speed_random = 0.1
+turbulence_influence_min = 0.0
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_liw4h"]
 gradient = SubResource("Gradient_x7p1e")
 
 [sub_resource type="Curve" id="Curve_i83ul"]
@@ -272,34 +291,116 @@ point_count = 2
 curve = SubResource("Curve_i83ul")
 
 [sub_resource type="Curve" id="Curve_sebbl"]
-_data = [Vector2(0, 0), 0.0, 5.27544, 0, 0, Vector2(0.28866, 1), 0.0, 0.0, 0, 0, Vector2(0.704467, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -4.79451, 0.0, 0, 0]
+_data = [Vector2(0, 0), 0.0, 5.27544, 0, 0, Vector2(0.292096, 1), 0.0, 0.0, 0, 0, Vector2(0.62543, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -4.79451, 0.0, 0, 0]
 point_count = 4
 
 [sub_resource type="CurveTexture" id="CurveTexture_svwsy"]
 curve = SubResource("Curve_sebbl")
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ae36r"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_y1fnq"]
 emission_shape = 1
 emission_sphere_radius = 10.0
-particle_flag_disable_z = true
 spread = 180.0
 gravity = Vector3(0, 1, 0)
 initial_velocity_min = 10.0
 initial_velocity_max = 10.0
-orbit_velocity_min = -0.05
-orbit_velocity_max = 0.05
 damping_max = 10.0
 damping_curve = SubResource("CurveTexture_tddai")
+scale_max = 3.0
 scale_curve = SubResource("CurveTexture_svwsy")
 color = Color(0.87451, 0.694118, 0, 0.235294)
-color_ramp = SubResource("GradientTexture1D_paej2")
+color_ramp = SubResource("GradientTexture1D_liw4h")
 hue_variation_min = -0.02
 hue_variation_max = 0.07
 turbulence_enabled = true
 turbulence_noise_strength = 0.5
 turbulence_noise_speed_random = 0.1
 turbulence_influence_min = 0.0
-attractor_interaction_enabled = false
+
+[sub_resource type="Animation" id="Animation_ocegq"]
+resource_name = "collect"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(4, 4), Vector2(8, 8), Vector2(8, 8), Vector2(4, 4)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.7, 1.8, 1.9, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.0349066, 0.0698132, -0.10472, 0.139626, -0.139626, 0.139626, -0.139626, 0.139626, -0.10472, 0.0698132, -0.0349066, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.7, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -30), Vector2(0, -30), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_3n0ey"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(4, 4)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gsxc2"]
+_data = {
+"RESET": SubResource("Animation_3n0ey"),
+"collect": SubResource("Animation_ocegq")
+}
 
 [node name="Key" type="CharacterBody2D"]
 collision_layer = 0
@@ -307,13 +408,12 @@ collision_mask = 0
 script = ExtResource("1_wcyfu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(1, 1)
+visible = false
 shape = SubResource("CircleShape2D_ayatw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 modulate = Color(0.917647, 0.917647, 0.917647, 1)
-position = Vector2(0, -3.04759)
-rotation = -0.654804
+z_index = 1
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_on5gf")
 animation = &"shiny"
@@ -334,13 +434,30 @@ libraries = {
 "": SubResource("AnimationLibrary_stbhd")
 }
 
-[node name="GPUParticles2D" type="GPUParticles2D" parent="AnimatedSprite2D"]
+[node name="shining_local" type="GPUParticles2D" parent="AnimatedSprite2D"]
 texture_filter = 2
 texture_repeat = 2
 material = SubResource("CanvasItemMaterial_h4l6r")
-amount = 64
+scale = Vector2(0.5, 0.5)
+amount = 16
 process_material = SubResource("ParticleProcessMaterial_ae36r")
 texture = ExtResource("2_yu3am")
 lifetime = 1.5
 speed_scale = 0.5
-fixed_fps = 15
+local_coords = true
+
+[node name="shining_global" type="GPUParticles2D" parent="AnimatedSprite2D"]
+z_index = -1
+texture_filter = 2
+texture_repeat = 2
+material = SubResource("CanvasItemMaterial_h4l6r")
+amount = 32
+process_material = SubResource("ParticleProcessMaterial_y1fnq")
+texture = ExtResource("2_yu3am")
+lifetime = 1.5
+speed_scale = 0.5
+
+[node name="collect" type="AnimationPlayer" parent="AnimatedSprite2D"]
+libraries = {
+"": SubResource("AnimationLibrary_gsxc2")
+}
