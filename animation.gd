@@ -84,8 +84,9 @@ func spawn_footstep(leg:legs = legs.LEGS_BOTH, amount : int = 1, spread : float 
 
 
 const colors = {
+	0: Color.DIM_GRAY,
 	1: Color.SADDLE_BROWN,
-	0: Color.DIM_GRAY
+	3: Color.DIM_GRAY
 }
 func get_footstep_color(leg:legs) -> Color:
 	var raycast : RayCast2D

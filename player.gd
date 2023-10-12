@@ -18,6 +18,12 @@ func get_gravity() -> float:
 	return jump_gravity if velocity.y < 0.0 else fall_gravity
 
 func _physics_process(delta) -> void:
+	# Jumping
+	if Input.is_action_pressed("jump") and is_on_floor():
+		velocity.y = -jump_velocity
+		$AnimatedSprite2D.jump()
+	
+	
 	# Gravity
 	if not is_on_floor():
 		velocity.y -= get_gravity() * delta
@@ -52,9 +58,3 @@ func move_horizontally():
 #		slowing down after key is released
 	velocity.x = speed
 #	$AnimationTree.set("parameters/blend_position", speed / MAX_SPEED)
-
-func _input(event) -> void:
-	# Jumping
-	if event.is_action_pressed("jump") and is_on_floor():
-		velocity.y = -jump_velocity
-		$AnimatedSprite2D.jump()
