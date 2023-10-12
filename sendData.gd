@@ -23,16 +23,9 @@ func send_data():
 
 
 
-func _on_request_completed(_result, response_code, _headers, _body):
+func _on_request_completed(result, response_code, headers, body):
 	if response_code == http.RESPONSE_OK:
 		get_tree().change_scene_to_file("res://slutskärm.tscn")
 	else:
 		# GE ERROR
-		$"../vänta".hide()
-		var popup = preload("res://nätverksfel.tscn").instantiate()
-		add_child(popup)
-		popup.try_again.connect(func():
-			$"../vänta".show()
-			popup.queue_free()
-			send_data()
-			)
+		pass
