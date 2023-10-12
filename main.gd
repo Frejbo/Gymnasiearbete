@@ -9,7 +9,7 @@ func _ready():
 		$complete.position.x *= -1
 		$player/AnimatedSprite2D.scale.x *= -1
 		$mist.position.x *= -1
-#		$Key.position.x *= -1
+		$Key.position.x *= -1
 		
 		for layer in $ParallaxBackground.get_children():
 			layer.get_child(0).scale.x *= -1
