@@ -32,9 +32,8 @@ func _process(_delta):
 		scale.x = -standardScale.x
 	
 	
-	if (animation == "jump" or animation == "landing_to_idle" or animation == "landing_to_running") && is_playing() or landing:# && !$"..".is_on_floor():
+	if (animation == "jump" or animation == "landing_to_idle" or animation == "landing_to_running") && is_playing() or landing:
 		return
-		print("not doing aaanythingggg tonight")
 	
 	if axis == 0:
 		play("idle")

@@ -10,3 +10,6 @@ res://key.gd
 res://main.gd
 res://sendData.gd
 res://nätverksfel.gd
+res://animation.gd
+res://dirt_particle.gd
+res://player.gd

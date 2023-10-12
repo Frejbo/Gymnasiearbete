@@ -35,7 +35,7 @@ func _physics_process(_delta):
 func follow_player():
 #	var weight = 1 - (1 / position.distance_to(player.position) * 10 * delta)
 #	print(position.distance_to(player.position))
-	var weight = 1-(1 / position.distance_to(goal_pos))
+#	var weight = 1-(1 / position.distance_to(goal_pos))
 #	weight = clamp(weight, .9, 1)
 	velocity = lerp(velocity, (goal_pos - position)*5, .05)
 	velocity = velocity.limit_length(player.MAX_SPEED)

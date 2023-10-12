@@ -23,7 +23,7 @@ func send_data():
 
 
 
-func _on_request_completed(result, response_code, headers, body):
+func _on_request_completed(_result, response_code, _headers, _body):
 	if response_code == http.RESPONSE_OK:
 		get_tree().change_scene_to_file("res://slutskärm.tscn")
 	else:
