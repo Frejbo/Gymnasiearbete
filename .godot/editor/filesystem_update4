@@ -1,12 +1,2 @@
-res://menu.tscn
-res://mist.tres
-res://menu.gd
-res://slutskärm.tscn
-res://nätverksfel.tscn
 res://main.tscn
-res://background.tscn
-res://dirt_particle.tscn
-res://key.tscn
-res://dirt_particle.gd
-res://main.gd
-res://key.gd
+res://mist.tres

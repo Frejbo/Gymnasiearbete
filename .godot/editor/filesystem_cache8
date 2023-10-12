@@ -20,10 +20,10 @@ player.gd::GDScript::-1::1695983864::0::1::::<>CharacterBody2D<>::
 sendData.gd::GDScript::-1::1696185481::0::1::::<>HTTPRequest<>::
 slutskärm.tscn::PackedScene::8464457924219096945::1696185622::0::1::::<><>::
 smoke_particle.png::CompressedTexture2D::1253413028006666108::1695983864::1696185552::1::::<><>::
-::res://aseprite/::1697116015
+::res://aseprite/::1697116314
  mountains.png::CompressedTexture2D::7031392723936577687::1695983998::1696185552::1::::<><>::
 dark_dirt_tileset.png::CompressedTexture2D::8425982442313439514::1696088252::1696185552::1::::<><>::
-dirt to stone.png::CompressedTexture2D::8936467548491986769::1697116279::1697116314::1::::<><>::
+dirt to stone.png::CompressedTexture2D::8936467548491986769::1697117596::1697117616::1::::<><>::
 dirt_particle.png::CompressedTexture2D::7817293515670164889::1696185481::1696185552::1::::<><>::
 door.png::CompressedTexture2D::7002351017604346184::1696841244::1697116015::1::::<><>::
 grassonly_tileset.png::CompressedTexture2D::5142234354689628907::1696511634::1696511857::1::::<><>::
