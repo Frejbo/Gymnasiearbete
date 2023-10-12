@@ -8,3 +8,5 @@ res://key.tscn
 res://menu.tscn
 res://key.gd
 res://main.gd
+res://sendData.gd
+res://nätverksfel.gd

@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://xe6bss1q2mnk"]
+[gd_scene load_steps=3 format=3 uid="uid://xe6bss1q2mnk"]
+
+[ext_resource type="Script" path="res://nätverksfel.gd" id="1_7wcoy"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wwlkc"]
 bg_color = Color(0.27451, 0.160784, 0.141176, 1)
@@ -12,6 +14,7 @@ corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
 [node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_7wcoy")
 
 [node name="Panel" type="Panel" parent="."]
 custom_minimum_size = Vector2(300, 110)
@@ -50,3 +53,5 @@ Kontrollera internetanslutningen."
 [node name="Button" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
 text = "Försök igen"
+
+[connection signal="pressed" from="Panel/VBoxContainer/Button" to="." method="_on_try_again"]
