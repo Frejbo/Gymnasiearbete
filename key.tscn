@@ -257,8 +257,8 @@ _data = {
 blend_mode = 1
 
 [sub_resource type="Gradient" id="Gradient_x7p1e"]
-offsets = PackedFloat32Array(0.00769231, 0.234615, 0.603846, 1)
-colors = PackedColorArray(0.825314, 0.534085, 5.77569e-07, 0.137255, 0.823451, 0.7855, 7.70092e-07, 0.392157, 0.830044, 0.79351, 0.0373451, 0.377512, 1, 1, 1, 0)
+offsets = PackedFloat32Array(0, 0.0576923, 1)
+colors = PackedColorArray(0.823529, 0.784314, 0, 0, 0.823451, 0.7855, 7.70092e-07, 0.392157, 1, 1, 1, 0)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_paej2"]
 gradient = SubResource("Gradient_x7p1e")
@@ -406,9 +406,9 @@ _data = {
 collision_layer = 0
 collision_mask = 0
 script = ExtResource("1_wcyfu")
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 shape = SubResource("CircleShape2D_ayatw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -454,8 +454,7 @@ material = SubResource("CanvasItemMaterial_h4l6r")
 amount = 32
 process_material = SubResource("ParticleProcessMaterial_y1fnq")
 texture = ExtResource("2_yu3am")
-lifetime = 1.5
-speed_scale = 0.5
+speed_scale = 0.25
 
 [node name="collect" type="AnimationPlayer" parent="AnimatedSprite2D"]
 libraries = {
