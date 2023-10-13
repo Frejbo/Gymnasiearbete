@@ -3570,7 +3570,7 @@ horizontal_alignment = 1
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Key" parent="." instance=ExtResource("84_glnnk")]
-position = Vector2(2152, -440)
+position = Vector2(2872, -384)
 
 [connection signal="frame_changed" from="player/AnimatedSprite2D" to="player/AnimatedSprite2D" method="_on_frame_changed"]
 [connection signal="body_entered" from="complete" to="complete" method="_on_body_entered"]
