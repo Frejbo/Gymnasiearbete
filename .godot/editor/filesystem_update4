@@ -1,12 +1,15 @@
 res://slutskärm.tscn
 res://mist.tres
-res://key.gd
 res://nätverksfel.tscn
 res://main.tscn
 res://background.tscn
 res://dirt_particle.tscn
 res://key.tscn
 res://menu.tscn
-res://player.gd
-res://main.gd
+res://door.tscn
+res://unlockArea.gd
+res://door.gd
 res://animation.gd
+res://main.gd
+res://god rays.gdshader
+res://key.gd

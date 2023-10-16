@@ -56,40 +56,43 @@ func _on_frame_changed():
 
 
 func spawn_footstep(leg:legs = legs.LEGS_BOTH, amount : int = 1, spread : float = 50) -> void:
+	$footstep.stream = load(get_footstep_meta(legs.LEG_FRONT)["sound"])
+	$footstep.play()
+	
 	for i in range(amount):
 		var particle := preload("res://dirt_particle.tscn").instantiate()
 		randomize()
 		var force = Vector2(randf_range(($"..".velocity.x / 50) * scale.x - spread, ($"..".velocity.x / 50) * scale.x + spread), randf_range(-150, -250))
 		match leg:
 			legs.LEG_BACK:
-				particle.set_color(get_footstep_color(legs.LEG_BACK))
+				particle.set_color(get_footstep_meta(legs.LEG_BACK)["color"])
 				particle.position = $back.global_position
 				$"../..".add_child(particle)
 				particle.apply_impulse(force)
 			legs.LEG_FRONT:
-				particle.set_color(get_footstep_color(legs.LEG_FRONT))
+				particle.set_color(get_footstep_meta(legs.LEG_FRONT)["color"])
 				particle.position = $front.global_position
 				$"../..".add_child(particle)
 				particle.apply_impulse(force)
 			legs.LEGS_BOTH:
-				particle.set_color(get_footstep_color(legs.LEG_BACK))
+				particle.set_color(get_footstep_meta(legs.LEG_BACK)["color"])
 				particle.position = $back.global_position
 				$"../..".add_child(particle)
 				particle.apply_impulse(force)
 				
 				particle = preload("res://dirt_particle.tscn").instantiate()
-				particle.set_color(get_footstep_color(legs.LEG_FRONT))
+				particle.set_color(get_footstep_meta(legs.LEG_FRONT)["color"])
 				particle.position = $front.global_position
 				$"../..".add_child(particle)
 				particle.apply_impulse(force)
 
 
 const colors = {
-	0: Color.DIM_GRAY,
-	1: Color.SADDLE_BROWN,
-	3: Color.DIM_GRAY
+	0: {"color":Color.DIM_GRAY, "sound":"res://sounds/footsteps/stone.ogg"},
+	1: {"color":Color.SADDLE_BROWN, "sound":"res://sounds/footsteps/stone.ogg"},
+	3: {"color":Color.DIM_GRAY, "sound":"res://sounds/footsteps/stone.ogg"}
 }
-func get_footstep_color(leg:legs) -> Color:
+func get_footstep_meta(leg:legs) -> Dictionary:
 	var raycast : RayCast2D
 	match leg:
 		legs.LEG_BACK:
@@ -101,4 +104,7 @@ func get_footstep_color(leg:legs) -> Color:
 	var local_point = tilemap.local_to_map(raycast.get_collision_point() / tilemap.scale)
 	var cell = tilemap.get_cell_source_id(1, local_point)
 	
-	return colors[cell]
+	if colors.has(cell):
+		return colors[cell]
+	else:
+		return colors[0]

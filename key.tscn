@@ -1,8 +1,9 @@
-[gd_scene load_steps=48 format=3 uid="uid://1y5856xxbwk4"]
+[gd_scene load_steps=53 format=3 uid="uid://1y5856xxbwk4"]
 
 [ext_resource type="Texture2D" uid="uid://crhb0gxsi3yc5" path="res://aseprite/key.png" id="1_ou07f"]
 [ext_resource type="Script" path="res://key.gd" id="1_wcyfu"]
 [ext_resource type="Texture2D" uid="uid://r4fsabk4i5do" path="res://smoke_particle.png" id="2_yu3am"]
+[ext_resource type="Script" path="res://unlockArea.gd" id="4_vcr4h"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ayatw"]
 radius = 32.0
@@ -402,6 +403,46 @@ _data = {
 "collect": SubResource("Animation_ocegq")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_4v3xg"]
+radius = 256.0
+
+[sub_resource type="Animation" id="Animation_jg5pl"]
+resource_name = "dissolve"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_juu72"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ewc1h"]
+_data = {
+"RESET": SubResource("Animation_juu72"),
+"dissolve": SubResource("Animation_jg5pl")
+}
+
 [node name="Key" type="CharacterBody2D"]
 collision_layer = 0
 collision_mask = 0
@@ -460,3 +501,17 @@ speed_scale = 0.25
 libraries = {
 "": SubResource("AnimationLibrary_gsxc2")
 }
+
+[node name="unlockArea" type="Area2D" parent="."]
+script = ExtResource("4_vcr4h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="unlockArea"]
+shape = SubResource("CircleShape2D_4v3xg")
+
+[node name="dissolve" type="AnimationPlayer" parent="unlockArea"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_ewc1h")
+}
+
+[connection signal="body_entered" from="unlockArea" to="unlockArea" method="_on_body_entered"]
