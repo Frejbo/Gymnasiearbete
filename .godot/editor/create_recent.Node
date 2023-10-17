@@ -1,7 +1,7 @@
+CollisionShape2D
 AudioStreamPlayer2D
 AnimationPlayer
 AnimationTree
-CollisionShape2D
 Area2D
 AnimatedSprite2D
 StaticBody2D
@@ -30,4 +30,3 @@ CanvasGroup
 Panel
 CanvasLayer
 HBoxContainer
-HTTPRequest
