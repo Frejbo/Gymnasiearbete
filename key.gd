@@ -25,7 +25,6 @@ func _physics_process(_delta):
 			collected = true
 
 func follow_target():
-	var weight = 1-(1 / position.distance_to(goal_pos))
 	velocity = lerp(velocity, (goal_pos - position)*5, .05)
 	velocity = velocity.limit_length(MAX_SPEED)
 
