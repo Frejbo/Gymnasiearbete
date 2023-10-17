@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bis2ogf8psp4o"]
+[gd_scene load_steps=9 format=3 uid="uid://bis2ogf8psp4o"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_lnie1"]
 [ext_resource type="PackedScene" uid="uid://bquais52etjax" path="res://map.tscn" id="2_tw1mu"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://skcnvp1xb06e" path="res://player.tscn" id="10_hl3ru"]
 [ext_resource type="Script" path="res://complete.gd" id="77_e2bsg"]
 [ext_resource type="PackedScene" uid="uid://btqco0gk4io5m" path="res://background.tscn" id="81_y8cg5"]
-[ext_resource type="PackedScene" uid="uid://1y5856xxbwk4" path="res://key.tscn" id="84_glnnk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tx2xk"]
 radius = 134.0
@@ -87,9 +86,6 @@ horizontal_alignment = 1
 [node name="ParallaxBackground" parent="." instance=ExtResource("81_y8cg5")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-
-[node name="Key" parent="." instance=ExtResource("84_glnnk")]
-position = Vector2(2872, -384)
 
 [connection signal="body_entered" from="complete" to="complete" method="_on_body_entered"]
 [connection signal="complete" from="complete" to="complete/HTTPRequest" method="_on_complete_complete"]

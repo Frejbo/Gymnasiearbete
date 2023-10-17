@@ -99,7 +99,7 @@ func get_footstep_meta(leg:legs) -> Dictionary:
 		legs.LEG_FRONT:
 			raycast = $front/RayCast2D
 	
-	var tilemap := $"../../TileMap"
+	var tilemap := $"../../map/TileMap"
 	var local_point = tilemap.local_to_map(raycast.get_collision_point() / tilemap.scale)
 	var cell = tilemap.get_cell_source_id(1, local_point)
 	

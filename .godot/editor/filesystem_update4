@@ -7,3 +7,6 @@ res://dirt_particle.tscn
 res://key.tscn
 res://menu.tscn
 res://door.tscn
+res://map.tscn
+res://main.gd
+res://animation.gd
