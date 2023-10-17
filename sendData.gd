@@ -28,4 +28,11 @@ func _on_request_completed(_result, response_code, _headers, _body):
 		get_tree().change_scene_to_file("res://slutskärm.tscn")
 	else:
 		# GE ERROR
-		pass
+		$"../vänta".hide()
+		var popup = preload("res://nätverksfel.tscn").instantiate()
+		add_child(popup)
+		popup.try_again.connect(func():
+			$"../vänta".show()
+			popup.queue_free()
+			send_data()
+			)

@@ -82,7 +82,7 @@
 [ext_resource type="Texture2D" uid="uid://b1u8f6y8fxylc" path="res://aseprite/cat running/cat_running8.png" id="77_l27jp"]
 [ext_resource type="Texture2D" uid="uid://cje4xj34jovwa" path="res://aseprite/cat running/cat_running9.png" id="78_oh6cl"]
 [ext_resource type="Script" path="res://animation.gd" id="79_jvlit"]
-[ext_resource type="AudioStream" uid="uid://brtv0co7483ph" path="res://sounds/footsteps/stone.ogg" id="81_newfq"]
+[ext_resource type="AudioStream" uid="uid://bsa8y7kcplljg" path="res://sounds/footsteps/stone.ogg" id="81_newfq"]
 [ext_resource type="PackedScene" uid="uid://btqco0gk4io5m" path="res://background.tscn" id="81_y8cg5"]
 [ext_resource type="PackedScene" uid="uid://1y5856xxbwk4" path="res://key.tscn" id="84_glnnk"]
 [ext_resource type="PackedScene" uid="uid://cb1lt8vlqqb6d" path="res://door.tscn" id="85_j7o2s"]
@@ -3513,7 +3513,7 @@ volume_db = -10.0
 polygon = PackedVector2Array(-32, 52, 0, 60, 24, 52, 40, 44, 48, 32, 56, 16, 56, -8, 40, -12, 24, -12, 8, 4, -32, 4, -40, 28, -40, 48)
 
 [node name="complete" type="Area2D" parent="."]
-position = Vector2(4944, -432)
+position = Vector2(5200, -224)
 script = ExtResource("77_e2bsg")
 metadata/_edit_group_ = true
 

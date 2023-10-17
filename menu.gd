@@ -1,13 +1,13 @@
 extends Control
 
 @export var confirmationBox : CheckBox
-
 var game = preload("res://main.tscn")
 
 func _enter_tree():
 	if FileAccess.file_exists("user://collected"):
 		print("Already submitted game")
-		# kan spela men inte submitta
+		Globals.should_submit = false
+		$VBoxContainer/description.text = "Du har redan skickat in ditt testsvar.\nDu kan spela igen, men ditt resultat kommer inte skickas in."
 
 func _on_start_pressed():
 	if confirmationBox.button_pressed:

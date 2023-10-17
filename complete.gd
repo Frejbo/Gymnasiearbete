@@ -11,6 +11,9 @@ func _process(_delta):
 
 
 func _on_body_entered(body):
+	if !Globals.should_submit:
+		get_tree().quit()
+	
 	if body != $"../player":
 		return
 	$"../player".set_physics_process(false)
