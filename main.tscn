@@ -82,7 +82,7 @@
 [ext_resource type="Texture2D" uid="uid://b1u8f6y8fxylc" path="res://aseprite/cat running/cat_running8.png" id="77_l27jp"]
 [ext_resource type="Texture2D" uid="uid://cje4xj34jovwa" path="res://aseprite/cat running/cat_running9.png" id="78_oh6cl"]
 [ext_resource type="Script" path="res://animation.gd" id="79_jvlit"]
-[ext_resource type="AudioStream" uid="uid://fbhwgwy8qyx4" path="res://sounds/footsteps/stone.ogg" id="81_newfq"]
+[ext_resource type="AudioStream" uid="uid://bsa8y7kcplljg" path="res://sounds/footsteps/stone.ogg" id="81_newfq"]
 [ext_resource type="PackedScene" uid="uid://btqco0gk4io5m" path="res://background.tscn" id="81_y8cg5"]
 [ext_resource type="PackedScene" uid="uid://1y5856xxbwk4" path="res://key.tscn" id="84_glnnk"]
 [ext_resource type="PackedScene" uid="uid://cb1lt8vlqqb6d" path="res://door.tscn" id="85_j7o2s"]

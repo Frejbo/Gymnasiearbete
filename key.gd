@@ -4,7 +4,7 @@ extends CharacterBody2D
 var goal_pos : Vector2
 @onready var MAX_SPEED = target.MAX_SPEED
 
-const MAX_DISTANCE = 400
+const MAX_DISTANCE = 300
 var collected = false
 func _physics_process(_delta):
 	goal_pos.x = target.position.x

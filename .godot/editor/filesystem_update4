@@ -7,9 +7,4 @@ res://dirt_particle.tscn
 res://key.tscn
 res://menu.tscn
 res://door.tscn
-res://unlockArea.gd
-res://door.gd
-res://animation.gd
-res://main.gd
-res://god rays.gdshader
 res://key.gd
