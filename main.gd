@@ -8,6 +8,7 @@ func _ready():
 		$TileMap.scale.x *= -1
 		$complete.position.x *= -1
 		$player/AnimatedSprite2D.scale.x *= -1
+		$player/CollisionPolygon2D.scale.x *= -1
 		$mist.position.x *= -1
 		$Key.position.x *= -1
 		$door.position.x *= -1
