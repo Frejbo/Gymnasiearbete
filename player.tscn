@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=3 uid="uid://skcnvp1xb06e"]
+[gd_scene load_steps=76 format=3 uid="uid://ny06nmnh50mw"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_yfnsc"]
 [ext_resource type="Texture2D" uid="uid://ce13djk18txn1" path="res://aseprite/cat jumping/cat_jumping6.png" id="2_72uio"]
@@ -73,7 +73,6 @@
 [ext_resource type="Texture2D" uid="uid://dk31iwssr5sck" path="res://aseprite/cat running/cat_running2.png" id="71_idgeb"]
 [ext_resource type="Texture2D" uid="uid://beyu48vrrbm51" path="res://aseprite/cat running/cat_running3.png" id="72_gpqfp"]
 [ext_resource type="Script" path="res://animation.gd" id="73_5u384"]
-[ext_resource type="AudioStream" uid="uid://brtv0co7483ph" path="res://sounds/footsteps/stone.ogg" id="74_q158w"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1a0k2"]
 animations = [{
@@ -367,7 +366,7 @@ metadata/_edit_group_ = true
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.8, 0.8)
 position_smoothing_enabled = true
-position_smoothing_speed = 8.0
+position_smoothing_speed = 6.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -393,7 +392,6 @@ scale = Vector2(4, 4)
 target_position = Vector2(0, 5)
 
 [node name="footstep" type="AudioStreamPlayer2D" parent="AnimatedSprite2D"]
-stream = ExtResource("74_q158w")
 volume_db = -10.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
