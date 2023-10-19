@@ -443,7 +443,7 @@ _data = {
 "dissolve": SubResource("Animation_jg5pl")
 }
 
-[node name="Key" type="CharacterBody2D"]
+[node name="Key" type="CharacterBody2D" groups=["Invert PosX"]]
 collision_layer = 0
 collision_mask = 0
 script = ExtResource("1_wcyfu")

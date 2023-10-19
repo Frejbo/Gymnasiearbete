@@ -1,5 +1,6 @@
 res://slutskärm.tscn
 res://mist.tres
+res://main.gd
 res://nätverksfel.tscn
 res://main.tscn
 res://background.tscn
@@ -8,5 +9,4 @@ res://key.tscn
 res://menu.tscn
 res://door.tscn
 res://map.tscn
-res://main.gd
-res://animation.gd
+res://player.tscn

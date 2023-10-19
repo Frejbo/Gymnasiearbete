@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://main.gd" id="1_lnie1"]
 [ext_resource type="PackedScene" uid="uid://bquais52etjax" path="res://map.tscn" id="2_tw1mu"]
 [ext_resource type="Script" path="res://sendData.gd" id="6_1tox2"]
-[ext_resource type="PackedScene" uid="uid://skcnvp1xb06e" path="res://player.tscn" id="10_hl3ru"]
+[ext_resource type="PackedScene" uid="uid://ny06nmnh50mw" path="res://player.tscn" id="10_hl3ru"]
 [ext_resource type="Script" path="res://complete.gd" id="77_e2bsg"]
 [ext_resource type="PackedScene" uid="uid://btqco0gk4io5m" path="res://background.tscn" id="81_y8cg5"]
 
@@ -24,7 +24,7 @@ script = ExtResource("1_lnie1")
 
 [node name="player" parent="." instance=ExtResource("10_hl3ru")]
 
-[node name="complete" type="Area2D" parent="."]
+[node name="complete" type="Area2D" parent="." groups=["Invert PosX"]]
 position = Vector2(6553, -1232)
 script = ExtResource("77_e2bsg")
 metadata/_edit_group_ = true

@@ -14,7 +14,7 @@ motion_scale = Vector2(0.2, 0.2)
 motion_offset = Vector2(0, 450)
 motion_mirroring = Vector2(2048, 0)
 
-[node name="MountainsBack" type="Sprite2D" parent="Back"]
+[node name="MountainsBack" type="Sprite2D" parent="Back" groups=["Invert ScaleX"]]
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(0, -500)
@@ -26,7 +26,7 @@ motion_scale = Vector2(0.35, 0.35)
 motion_offset = Vector2(0, 450)
 motion_mirroring = Vector2(2048, 0)
 
-[node name="MountainsMiddle" type="Sprite2D" parent="Middle"]
+[node name="MountainsMiddle" type="Sprite2D" parent="Middle" groups=["Invert ScaleX"]]
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(0, -500)
@@ -38,7 +38,7 @@ motion_scale = Vector2(0.5, 0.5)
 motion_offset = Vector2(0, 256)
 motion_mirroring = Vector2(2048, 0)
 
-[node name="MountainsFront" type="Sprite2D" parent="Front"]
+[node name="MountainsFront" type="Sprite2D" parent="Front" groups=["Invert ScaleX"]]
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(0, -500)

@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dlaxv7hm1gp5m" path="res://aseprite/proper_tileset_dirtgrass.png" id="4_og2iu"]
 [ext_resource type="Texture2D" uid="uid://dsbux165p5u8i" path="res://aseprite/dark_dirt_tileset.png" id="5_g04et"]
 [ext_resource type="Texture2D" uid="uid://d0k5kyaocbta4" path="res://aseprite/dirt to stone.png" id="6_q51st"]
-[ext_resource type="Texture2D" uid="uid://csydd0lj1inl6" path="res://aseprite/dark_rock.png" id="7_dm1ja"]
+[ext_resource type="Texture2D" uid="uid://cn3p4oxit510d" path="res://aseprite/dark_rock.png" id="7_dm1ja"]
 [ext_resource type="PackedScene" uid="uid://cb1lt8vlqqb6d" path="res://door.tscn" id="8_jfdhy"]
 [ext_resource type="PackedScene" uid="uid://1y5856xxbwk4" path="res://key.tscn" id="9_ckcqa"]
 
@@ -3749,7 +3749,7 @@ sources/4 = SubResource("TileSetAtlasSource_ccf2h")
 
 [node name="map" type="Node2D"]
 
-[node name="mist" type="GPUParticles2D" parent="."]
+[node name="mist" type="GPUParticles2D" parent="." groups=["Invert PosX"]]
 z_index = 1
 texture_filter = 2
 position = Vector2(2912, 0)
@@ -3762,7 +3762,7 @@ randomness = 0.3
 fixed_fps = 15
 visibility_rect = Rect2(-400, -400, 800, 800)
 
-[node name="TileMap" type="TileMap" parent="."]
+[node name="TileMap" type="TileMap" parent="." groups=["Invert ScaleX"]]
 z_index = 1
 texture_filter = 1
 scale = Vector2(4, 4)
