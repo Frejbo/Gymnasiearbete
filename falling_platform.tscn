@@ -1,7 +1,7 @@
 [gd_scene load_steps=22 format=3 uid="uid://bq768rfexsww6"]
 
 [ext_resource type="Script" path="res://falling_platform.gd" id="1_6e12q"]
-[ext_resource type="Texture2D" uid="uid://bonqmspi3cxoy" path="res://aseprite/breaking_stone.png" id="1_w4voh"]
+[ext_resource type="Texture2D" uid="uid://f1mwtfjp8sn6" path="res://aseprite/breaking_stone.png" id="1_w4voh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_71uls"]
 atlas = ExtResource("1_w4voh")
@@ -129,13 +129,12 @@ size = Vector2(176, 44)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4sd7i"]
 size = Vector2(176, 49.5)
 
-[node name="Falling Platform" type="CharacterBody2D"]
+[node name="Falling Platform" type="CharacterBody2D" groups=["Invert PosX"]]
 script = ExtResource("1_6e12q")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_5ljl3")
-animation = &"break"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -33.5)
@@ -147,6 +146,5 @@ shape = SubResource("RectangleShape2D_vx5vt")
 position = Vector2(0, -36.25)
 shape = SubResource("RectangleShape2D_4sd7i")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-
+[connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
