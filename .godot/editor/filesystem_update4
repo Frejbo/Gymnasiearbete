@@ -1,8 +1,5 @@
-res://falling_platform.gd
-res://falling_platform.tscn
-res://mist.tres
-res://map.tscn
 res://slutskärm.tscn
+res://mist.tres
 res://nätverksfel.tscn
 res://main.tscn
 res://background.tscn
@@ -10,4 +7,7 @@ res://dirt_particle.tscn
 res://key.tscn
 res://menu.tscn
 res://door.tscn
+res://map.tscn
 res://player.tscn
+res://falling_platform.tscn
+res://falling_platform.gd

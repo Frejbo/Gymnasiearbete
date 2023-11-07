@@ -1,14 +1,18 @@
 extends CharacterBody2D
 
+var enabled := true
 func _on_area_2d_body_entered(body):
 	if body == self: return
+	if not enabled: return
+	enabled = false
 	$AnimatedSprite2D.play("break")
 	await $AnimatedSprite2D.animation_finished
-	await get_tree().create_timer(1).timeout
-	hide()
-	$AnimatedSprite2D.play("break", -1.0, false)
+	$CollisionShape2D.disabled = true
+	modulate.a = 0
+	$AnimatedSprite2D.frame = 0
 	
-func _on_animated_sprite_2d_frame_changed() -> void:
-	print($AnimatedSprite2D.frame)
-	if $AnimatedSprite2D.frame >= 13:
-		$CollisionShape2D.disabled = true
+	await get_tree().create_timer(2).timeout
+	
+	$CollisionShape2D.disabled = false
+	$AnimationPlayer.play("dissolveIn")
+	enabled = true

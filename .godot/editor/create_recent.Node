@@ -1,3 +1,4 @@
+AnimationPlayer
 DampedSpringJoint2D
 Camera2D
 Area2D
@@ -6,7 +7,6 @@ AnimatedSprite2D
 Sprite2D
 CharacterBody2D
 AudioStreamPlayer2D
-AnimationPlayer
 AnimationTree
 StaticBody2D
 RemoteTransform2D
@@ -30,4 +30,3 @@ Skeleton2D
 CanvasGroup
 Panel
 CanvasLayer
-HBoxContainer
