@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var direction = ["Höger", "Vänster"].pick_random()
+@onready var direction = ["Höger"].pick_random()
 
 var nodes = []
 func _ready():

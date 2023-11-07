@@ -1,3 +1,4 @@
+GPUParticles2D
 AnimationPlayer
 DampedSpringJoint2D
 Camera2D
@@ -10,7 +11,6 @@ AudioStreamPlayer2D
 AnimationTree
 StaticBody2D
 RemoteTransform2D
-GPUParticles2D
 CheckBox
 Label
 VBoxContainer

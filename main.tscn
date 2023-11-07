@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://bis2ogf8psp4o"]
+[gd_scene load_steps=15 format=3 uid="uid://bis2ogf8psp4o"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_lnie1"]
 [ext_resource type="PackedScene" uid="uid://bquais52etjax" path="res://map.tscn" id="2_tw1mu"]
 [ext_resource type="Script" path="res://sendData.gd" id="6_1tox2"]
+[ext_resource type="Texture2D" uid="uid://d30wentgwcudp" path="res://circle.png" id="6_46dc4"]
 [ext_resource type="PackedScene" uid="uid://ny06nmnh50mw" path="res://player.tscn" id="10_hl3ru"]
 [ext_resource type="Script" path="res://complete.gd" id="77_e2bsg"]
 [ext_resource type="PackedScene" uid="uid://btqco0gk4io5m" path="res://background.tscn" id="81_y8cg5"]
@@ -17,15 +18,48 @@ corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
+[sub_resource type="Gradient" id="Gradient_7yvyh"]
+offsets = PackedFloat32Array(0.123077, 0.276923, 0.75, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_xuggl"]
+gradient = SubResource("Gradient_7yvyh")
+
+[sub_resource type="Curve" id="Curve_12l8v"]
+_data = [Vector2(0, 0), 0.0, 8.57684, 0, 0, Vector2(0.573883, 1), 0.595614, 0.595614, 0, 0, Vector2(0.986254, 0), -7.65789, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_op6hr"]
+curve = SubResource("Curve_12l8v")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_8ne43"]
+lifetime_randomness = 0.5
+particle_flag_disable_z = true
+direction = Vector3(0, -1, 0)
+gravity = Vector3(0, 98, 0)
+initial_velocity_min = 700.0
+initial_velocity_max = 1100.0
+orbit_velocity_min = 0.5
+orbit_velocity_max = 1.5
+scale_min = 0.5
+scale_max = 2.0
+scale_curve = SubResource("CurveTexture_op6hr")
+color = Color(1, 1, 1, 0.439216)
+color_ramp = SubResource("GradientTexture1D_xuggl")
+hue_variation_min = -0.02
+hue_variation_max = 0.15
+turbulence_enabled = true
+
 [node name="main" type="Node2D"]
 script = ExtResource("1_lnie1")
 
 [node name="map" parent="." instance=ExtResource("2_tw1mu")]
 
 [node name="player" parent="." instance=ExtResource("10_hl3ru")]
+position = Vector2(6048, -1120)
 
 [node name="complete" type="Area2D" parent="." groups=["Invert PosX"]]
-position = Vector2(6553, -1232)
+position = Vector2(9304, -1280)
 script = ExtResource("77_e2bsg")
 metadata/_edit_group_ = true
 
@@ -82,6 +116,17 @@ size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 12
 text = "Skickar in ditt resultat, stäng inte av spelet än."
 horizontal_alignment = 1
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="complete"]
+amount = 256
+process_material = SubResource("ParticleProcessMaterial_8ne43")
+texture = ExtResource("6_46dc4")
+lifetime = 3.0
+speed_scale = 0.2
+fixed_fps = 24
+trail_enabled = true
+trail_sections = 32
+trail_section_subdivisions = 16
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("81_y8cg5")]
 
