@@ -8,7 +8,3 @@ res://key.tscn
 res://menu.tscn
 res://door.tscn
 res://map.tscn
-res://player.tscn
-res://falling_platform.tscn
-res://falling_platform.gd
-res://main.gd
