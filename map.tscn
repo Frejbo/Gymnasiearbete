@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dlaxv7hm1gp5m" path="res://aseprite/proper_tileset_dirtgrass.png" id="4_og2iu"]
 [ext_resource type="Texture2D" uid="uid://dsbux165p5u8i" path="res://aseprite/dark_dirt_tileset.png" id="5_g04et"]
 [ext_resource type="Texture2D" uid="uid://d0k5kyaocbta4" path="res://aseprite/dirt to stone.png" id="6_q51st"]
-[ext_resource type="Texture2D" uid="uid://cn3p4oxit510d" path="res://aseprite/dark_rock.png" id="7_dm1ja"]
+[ext_resource type="Texture2D" uid="uid://bnatwilfdq5mj" path="res://aseprite/dark_rock.png" id="7_dm1ja"]
 [ext_resource type="PackedScene" uid="uid://cb1lt8vlqqb6d" path="res://door.tscn" id="8_jfdhy"]
 [ext_resource type="PackedScene" uid="uid://1y5856xxbwk4" path="res://key.tscn" id="9_ckcqa"]
 [ext_resource type="PackedScene" uid="uid://bq768rfexsww6" path="res://falling_platform.tscn" id="10_oftbq"]

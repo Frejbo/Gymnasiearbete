@@ -1,3 +1,5 @@
+AudioStreamPlayer2D
+AudioStreamPlayer
 GPUParticles2D
 AnimationPlayer
 DampedSpringJoint2D
@@ -7,7 +9,6 @@ CollisionShape2D
 AnimatedSprite2D
 Sprite2D
 CharacterBody2D
-AudioStreamPlayer2D
 AnimationTree
 StaticBody2D
 RemoteTransform2D
@@ -29,4 +30,3 @@ Bone2D
 Skeleton2D
 CanvasGroup
 Panel
-CanvasLayer
