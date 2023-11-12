@@ -478,7 +478,7 @@ _data = {
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4v3xg"]
-radius = 256.0
+radius = 128.0
 
 [sub_resource type="Animation" id="Animation_juu72"]
 length = 0.001
@@ -537,14 +537,12 @@ frame_progress = 0.148041
 
 [node name="bounce" type="AnimationPlayer" parent="AnimatedSprite2D"]
 autoplay = "bounce"
-reset_on_save = false
 libraries = {
 "": SubResource("AnimationLibrary_6dem0")
 }
 
 [node name="jiggle" type="AnimationPlayer" parent="AnimatedSprite2D"]
 autoplay = "jiggle"
-reset_on_save = false
 libraries = {
 "": SubResource("AnimationLibrary_stbhd")
 }
@@ -572,6 +570,7 @@ texture = ExtResource("2_yu3am")
 speed_scale = 0.25
 
 [node name="collect" type="AnimationPlayer" parent="AnimatedSprite2D"]
+reset_on_save = false
 libraries = {
 "": SubResource("AnimationLibrary_gsxc2")
 }
@@ -580,6 +579,7 @@ libraries = {
 script = ExtResource("4_vcr4h")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="unlockArea"]
+visible = false
 shape = SubResource("CircleShape2D_4v3xg")
 
 [node name="dissolve" type="AnimationPlayer" parent="unlockArea"]
@@ -591,7 +591,7 @@ libraries = {
 [node name="ooz" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_g8v4x")
 autoplay = true
-max_distance = 1000.0
+max_distance = 750.0
 attenuation = 0.5
 
 [node name="collect" type="AudioStreamPlayer" parent="."]

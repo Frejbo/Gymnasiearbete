@@ -1,7 +1,8 @@
-[gd_scene load_steps=76 format=3 uid="uid://ny06nmnh50mw"]
+[gd_scene load_steps=81 format=3 uid="uid://ny06nmnh50mw"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_yfnsc"]
 [ext_resource type="Texture2D" uid="uid://ce13djk18txn1" path="res://aseprite/cat jumping/cat_jumping6.png" id="2_72uio"]
+[ext_resource type="AudioStream" uid="uid://banjmncqeu6hr" path="res://sounds/footsteps/Jump.wav" id="2_ww4sj"]
 [ext_resource type="Texture2D" uid="uid://5774if5c041r" path="res://aseprite/cat jumping/cat_jumping7.png" id="3_sgbra"]
 [ext_resource type="Texture2D" uid="uid://fgn84i868me0" path="res://aseprite/cat jumping/cat_jumping8.png" id="4_6cj2w"]
 [ext_resource type="Texture2D" uid="uid://d0l6c4cjavq7i" path="res://aseprite/cat idle/cat_idleshaded1.png" id="5_l2v42"]
@@ -73,6 +74,9 @@
 [ext_resource type="Texture2D" uid="uid://dk31iwssr5sck" path="res://aseprite/cat running/cat_running2.png" id="71_idgeb"]
 [ext_resource type="Texture2D" uid="uid://beyu48vrrbm51" path="res://aseprite/cat running/cat_running3.png" id="72_gpqfp"]
 [ext_resource type="Script" path="res://animation.gd" id="73_5u384"]
+[ext_resource type="AudioStream" uid="uid://drqje5vjt3x10" path="res://sounds/footsteps/Grass/landing.wav" id="75_3indk"]
+[ext_resource type="AudioStream" uid="uid://bxn5kdsf5x2t2" path="res://sounds/footsteps/Grass/footstep2.wav" id="76_aayls"]
+[ext_resource type="AudioStream" uid="uid://darrdw6x7qmei" path="res://sounds/footsteps/Grass/footstep3.wav" id="77_kfbhe"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1a0k2"]
 animations = [{
@@ -350,6 +354,13 @@ animations = [{
 "speed": 30.0
 }]
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_67ehi"]
+streams_count = 2
+stream_0/stream = ExtResource("76_aayls")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("77_kfbhe")
+stream_1/weight = 1.0
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r657i"]
 size = Vector2(80, 74)
 
@@ -363,6 +374,10 @@ jump_time_to_peak = 0.25
 jump_time_to_descent = 0.32
 metadata/_edit_group_ = true
 
+[node name="jump" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_ww4sj")
+volume_db = -15.0
+
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.8, 0.8)
 position_smoothing_enabled = true
@@ -372,8 +387,12 @@ position_smoothing_speed = 6.0
 texture_filter = 1
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_1a0k2")
-animation = &"idle"
+animation = &"landing_to_running"
 script = ExtResource("73_5u384")
+
+[node name="landing" type="AudioStreamPlayer" parent="AnimatedSprite2D"]
+stream = ExtResource("75_3indk")
+volume_db = -15.0
 
 [node name="front" type="Marker2D" parent="AnimatedSprite2D"]
 position = Vector2(6, 15)
@@ -391,7 +410,11 @@ scale = Vector2(0.25, 0.25)
 scale = Vector2(4, 4)
 target_position = Vector2(0, 5)
 
-[node name="footstep" type="AudioStreamPlayer2D" parent="AnimatedSprite2D"]
+[node name="footstep grass" type="AudioStreamPlayer" parent="AnimatedSprite2D"]
+stream = SubResource("AudioStreamRandomizer_67ehi")
+volume_db = -8.0
+
+[node name="footstep" type="AudioStreamPlayer" parent="AnimatedSprite2D"]
 volume_db = -10.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

@@ -1,7 +1,7 @@
+AnimationPlayer
 AudioStreamPlayer
 AudioStreamPlayer2D
 GPUParticles2D
-AnimationPlayer
 DampedSpringJoint2D
 Camera2D
 Area2D

@@ -14,13 +14,23 @@ func _process(_delta):
 	var axis = Input.get_axis("left", "right")
 	if $"..".is_on_floor():
 		if landing:
-			spawn_footstep(legs.LEG_FRONT, 10, 150)
 			# landar
+			$landing.play()
+			spawn_footstep(legs.LEG_FRONT, 10, 150)
+			landing = false
 			if axis == 0:
 				play("landing_to_idle")
+				
+				while frame != 3:
+					await frame_changed
+				spawn_footstep(legs.LEG_BACK, 7)
 			else:
 				play("landing_to_running")
-			landing = false
+				
+				while frame != 5:
+					await frame_changed
+				spawn_footstep(legs.LEG_BACK, 7)
+			
 	else:
 		if not landing:
 			landing = true
@@ -49,14 +59,20 @@ func _on_frame_changed():
 	if not $"..".is_on_floor(): return
 	
 	if frame == 4:
-		spawn_footstep(legs.LEG_FRONT, 3)
+		spawn_footstep(legs.LEG_FRONT, 5, 30)
 	elif frame == 8:
-		spawn_footstep(legs.LEG_BACK, 5)
+		spawn_footstep(legs.LEG_BACK, 7)
 
 
 func spawn_footstep(leg:legs = legs.LEGS_BOTH, amount : int = 1, spread : float = 50) -> void:
-	$footstep.stream = load(get_footstep_meta(legs.LEG_FRONT)["sound"])
-	$footstep.play()
+	var footstep = get_footstep_meta(leg)
+	match typeof(footstep["sound"]):
+		4:
+			$footstep.pitch_scale = randf_range(.7, 1.3)
+			$footstep.stream = load(footstep["sound"])
+			$footstep.play()
+		24:
+			footstep["sound"].play()
 	
 	for i in range(amount):
 		var particle := preload("res://dirt_particle.tscn").instantiate()
@@ -86,10 +102,10 @@ func spawn_footstep(leg:legs = legs.LEGS_BOTH, amount : int = 1, spread : float 
 				particle.apply_impulse(force)
 
 
-const colors = {
-	0: {"color":Color.DIM_GRAY, "sound":"res://sounds/footsteps/stone.ogg"},
-	1: {"color":Color.SADDLE_BROWN, "sound":"res://sounds/footsteps/stone.ogg"},
-	3: {"color":Color.DIM_GRAY, "sound":"res://sounds/footsteps/stone.ogg"}
+@onready var colors = {
+	0: {"color":Color.DIM_GRAY, "sound":"res://sounds/footsteps/Stone/footstep.ogg"},
+	3: {"color":Color.DIM_GRAY, "sound":"res://sounds/footsteps/Stone/footstep.ogg"},
+	1: {"color":Color.SADDLE_BROWN, "sound":$"footstep grass"}
 }
 func get_footstep_meta(leg:legs) -> Dictionary:
 	var raycast : RayCast2D
@@ -98,11 +114,13 @@ func get_footstep_meta(leg:legs) -> Dictionary:
 			raycast = $back/RayCast2D
 		legs.LEG_FRONT:
 			raycast = $front/RayCast2D
+		legs.LEGS_BOTH:
+			raycast = $front/RayCast2D
 	
 	var tilemap := $"../../map/TileMap"
 	var local_point = tilemap.local_to_map(raycast.get_collision_point() / tilemap.scale)
 	var cell = tilemap.get_cell_source_id(1, local_point)
-	
+	print(cell)
 	if colors.has(cell):
 		return colors[cell]
 	else:

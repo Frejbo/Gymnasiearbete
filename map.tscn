@@ -3791,6 +3791,7 @@ position = Vector2(9952, -1856)
 
 [node name="Key" parent="." instance=ExtResource("9_ckcqa")]
 position = Vector2(2872, -384)
+DRAG_DISTANCE = 250
 
 [node name="Key2" parent="." instance=ExtResource("9_ckcqa")]
 position = Vector2(4768, -1088)
@@ -3804,9 +3805,6 @@ position = Vector2(6624, -768)
 
 [node name="Falling Platform3" parent="." instance=ExtResource("10_oftbq")]
 position = Vector2(10400, -1216)
-
-[node name="Falling Platform6" parent="." instance=ExtResource("10_oftbq")]
-position = Vector2(10272, -1856)
 
 [node name="Falling Platform5" parent="." instance=ExtResource("10_oftbq")]
 position = Vector2(10720, -1280)
