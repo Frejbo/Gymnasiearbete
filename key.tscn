@@ -4,8 +4,8 @@
 [ext_resource type="Script" path="res://key.gd" id="1_wcyfu"]
 [ext_resource type="Texture2D" uid="uid://r4fsabk4i5do" path="res://smoke_particle.png" id="2_yu3am"]
 [ext_resource type="Script" path="res://unlockArea.gd" id="4_vcr4h"]
-[ext_resource type="AudioStream" uid="uid://dlpoh5nv6abwm" path="res://sounds/key_ooz.ogg" id="5_g8v4x"]
-[ext_resource type="AudioStream" uid="uid://cao5fiomyjwqs" path="res://sounds/key_collected.wav" id="6_7trig"]
+[ext_resource type="AudioStream" uid="uid://dp66t6mn5sdx3" path="res://sounds/key_ooz.ogg" id="5_g8v4x"]
+[ext_resource type="AudioStream" uid="uid://ds4138gad0akt" path="res://sounds/key_collected.wav" id="6_7trig"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ayatw"]
 radius = 32.0
