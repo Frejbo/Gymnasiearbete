@@ -56,6 +56,7 @@ script = ExtResource("1_lnie1")
 [node name="map" parent="." instance=ExtResource("2_tw1mu")]
 
 [node name="player" parent="." instance=ExtResource("10_hl3ru")]
+position = Vector2(2672, -144)
 
 [node name="complete" type="Area2D" parent="." groups=["Invert PosX"]]
 position = Vector2(15776, -2256)

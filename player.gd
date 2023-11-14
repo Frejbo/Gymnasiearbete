@@ -19,10 +19,8 @@ func get_gravity() -> float:
 
 func _physics_process(delta) -> void:
 	if Input.is_action_pressed("jump") and is_on_floor():
-		$jump.pitch_scale = randf_range(.6, 1.4)
-		$jump.play()
-		velocity.y = -jump_velocity
 		$AnimatedSprite2D.jump()
+		velocity.y = -jump_velocity
 	
 	# Gravity
 	if not is_on_floor():

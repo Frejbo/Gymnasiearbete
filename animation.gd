@@ -6,6 +6,7 @@ var landing : bool = false
 enum legs {LEGS_BOTH, LEG_BACK, LEG_FRONT}
 
 func jump():
+	get_footstep_meta(legs.LEG_FRONT)["jump"].play()
 	stop()
 	play("jump")
 	spawn_footstep(legs.LEG_BACK, 10)
@@ -95,11 +96,10 @@ func spawn_footstep(leg:legs = legs.LEGS_BOTH, amount : int = 1, spread : float 
 				$"../..".add_child(particle)
 				particle.apply_impulse(force)
 
-
 @onready var colors = {
-	0: {"color":Color.DIM_GRAY, "sound":$"footstep stone"},
-	3: {"color":Color.DIM_GRAY, "sound":$"footstep stone"},
-	1: {"color":Color.SADDLE_BROWN, "sound":$"footstep grass"}
+	0: {"color":Color.DIM_GRAY, "sound":$"footstep stone", "jump":$"../jump stone"},
+	3: {"color":Color.DIM_GRAY, "sound":$"footstep stone", "jump":$"../jump stone"},
+	1: {"color":Color.SADDLE_BROWN, "sound":$"footstep grass", "jump":$"../jump grass"}
 }
 func get_footstep_meta(leg:legs) -> Dictionary:
 	var raycast : RayCast2D
