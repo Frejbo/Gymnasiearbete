@@ -45,7 +45,6 @@ wait_time = 0.5
 autostart = true
 
 [node name="Front" type="ParallaxLayer" parent="."]
-visible = false
 motion_scale = Vector2(0.5, 0.5)
 motion_offset = Vector2(0, 256)
 motion_mirroring = Vector2(2048, 0)

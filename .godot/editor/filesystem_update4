@@ -1,7 +1,9 @@
-res://slutskärm.tscn
-res://mist.tres
-res://main.tscn
 res://background.tscn
+res://mist.tres
+res://cloudManager.gd
+res://cloud.gd
+res://slutskärm.tscn
+res://main.tscn
 res://dirt_particle.tscn
 res://key.tscn
 res://menu.tscn
@@ -9,7 +11,4 @@ res://door.tscn
 res://player.tscn
 res://map.tscn
 res://falling_platform.tscn
-res://animation.gd
-res://cloud.gd
 res://cloud.tscn
-res://cloudManager.gd
