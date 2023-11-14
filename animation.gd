@@ -65,14 +65,7 @@ func _on_frame_changed():
 
 
 func spawn_footstep(leg:legs = legs.LEGS_BOTH, amount : int = 1, spread : float = 50) -> void:
-	var footstep = get_footstep_meta(leg)
-	match typeof(footstep["sound"]):
-		4:
-			$footstep.pitch_scale = randf_range(.7, 1.3)
-			$footstep.stream = load(footstep["sound"])
-			$footstep.play()
-		24:
-			footstep["sound"].play()
+	get_footstep_meta(leg)["sound"].play()
 	
 	for i in range(amount):
 		var particle := preload("res://dirt_particle.tscn").instantiate()
@@ -103,8 +96,8 @@ func spawn_footstep(leg:legs = legs.LEGS_BOTH, amount : int = 1, spread : float 
 
 
 @onready var colors = {
-	0: {"color":Color.DIM_GRAY, "sound":"res://sounds/footsteps/Stone/footstep.ogg"},
-	3: {"color":Color.DIM_GRAY, "sound":"res://sounds/footsteps/Stone/footstep.ogg"},
+	0: {"color":Color.DIM_GRAY, "sound":$"footstep stone"},
+	3: {"color":Color.DIM_GRAY, "sound":$"footstep stone"},
 	1: {"color":Color.SADDLE_BROWN, "sound":$"footstep grass"}
 }
 func get_footstep_meta(leg:legs) -> Dictionary:
