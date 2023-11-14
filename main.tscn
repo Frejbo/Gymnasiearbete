@@ -58,7 +58,7 @@ script = ExtResource("1_lnie1")
 [node name="player" parent="." instance=ExtResource("10_hl3ru")]
 
 [node name="complete" type="Area2D" parent="." groups=["Invert PosX"]]
-position = Vector2(14832, -2056)
+position = Vector2(15776, -2256)
 script = ExtResource("77_e2bsg")
 metadata/_edit_group_ = true
 

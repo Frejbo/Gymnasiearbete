@@ -1,8 +1,8 @@
 [gd_scene load_steps=27 format=3 uid="uid://bq768rfexsww6"]
 
 [ext_resource type="Script" path="res://falling_platform.gd" id="1_6e12q"]
-[ext_resource type="Texture2D" uid="uid://bonqmspi3cxoy" path="res://aseprite/breaking_stone.png" id="1_w4voh"]
-[ext_resource type="AudioStream" uid="uid://b64dagsknbgal" path="res://sounds/falling plattform stone.wav" id="3_nypjd"]
+[ext_resource type="Texture2D" uid="uid://didqb22byxrj7" path="res://aseprite/breaking_stone.png" id="1_w4voh"]
+[ext_resource type="AudioStream" uid="uid://c3sopl5ycsrw5" path="res://sounds/falling plattform stone.wav" id="3_nypjd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_71uls"]
 atlas = ExtResource("1_w4voh")
