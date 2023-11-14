@@ -10,3 +10,6 @@ res://player.tscn
 res://map.tscn
 res://falling_platform.tscn
 res://animation.gd
+res://cloud.gd
+res://cloud.tscn
+res://cloudManager.gd

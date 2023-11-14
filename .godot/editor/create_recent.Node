@@ -1,14 +1,16 @@
-AudioStreamPlayer2D
+Timer
 AnimationPlayer
-AudioStreamPlayer
+ParallaxLayer
+CollisionShape2D
+CharacterBody2D
 GPUParticles2D
+AnimatedSprite2D
+Sprite2D
+AudioStreamPlayer2D
+AudioStreamPlayer
 DampedSpringJoint2D
 Camera2D
 Area2D
-CollisionShape2D
-AnimatedSprite2D
-Sprite2D
-CharacterBody2D
 AnimationTree
 StaticBody2D
 RemoteTransform2D
@@ -17,7 +19,6 @@ Label
 VBoxContainer
 Button
 RayCast2D
-ParallaxLayer
 ParallaxBackground
 TileMap
 GPUParticlesAttractorSphere3D
@@ -29,4 +30,3 @@ CollisionPolygon2D
 Bone2D
 Skeleton2D
 CanvasGroup
-Panel
