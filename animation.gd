@@ -29,7 +29,8 @@ func _process(_delta):
 				
 				while frame != 5:
 					await frame_changed
-				spawn_footstep(legs.LEG_BACK, 7)
+				if animation != "jump":
+					spawn_footstep(legs.LEG_BACK, 7)
 			
 	else:
 		if not landing:

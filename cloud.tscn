@@ -1,0 +1,109 @@
+[gd_scene load_steps=13 format=3 uid="uid://bvujfgniueqra"]
+
+[ext_resource type="Texture2D" uid="uid://dww6mac83tdwd" path="res://aseprite/cloud.png" id="1_412bx"]
+[ext_resource type="Script" path="res://cloud.gd" id="2_sgmot"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ryo5o"]
+atlas = ExtResource("1_412bx")
+region = Rect2(0, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_04stv"]
+atlas = ExtResource("1_412bx")
+region = Rect2(64, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gjabl"]
+atlas = ExtResource("1_412bx")
+region = Rect2(128, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d1mip"]
+atlas = ExtResource("1_412bx")
+region = Rect2(192, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6wtec"]
+atlas = ExtResource("1_412bx")
+region = Rect2(256, 0, 64, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kmxnl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ryo5o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_04stv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gjabl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d1mip")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6wtec")
+}],
+"loop": true,
+"name": &"clouds",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_enlmp"]
+
+[sub_resource type="Animation" id="Animation_1rr68"]
+resource_name = "fadeIn"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_o86vr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0osq8"]
+_data = {
+"RESET": SubResource("Animation_o86vr"),
+"fadeIn": SubResource("Animation_1rr68")
+}
+
+[node name="cloud" type="CharacterBody2D"]
+script = ExtResource("2_sgmot")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_kmxnl")
+animation = &"clouds"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_enlmp")
+disabled = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "fadeIn"
+libraries = {
+"": SubResource("AnimationLibrary_0osq8")
+}
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 60.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

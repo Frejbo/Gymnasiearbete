@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1699920208
+::res://::1699947206
 animation.gd::GDScript::-1::1699919821::0::1::::<>AnimatedSprite2D<>::
 background.tscn::PackedScene::3753186514826893968::1699920180::0::1::::<><>::uid://de040sllplapb::::res://aseprite/mountains back.png<>uid://cvgifcffbron6::::res://aseprite/mountains middle.png<>uid://c7rl0ho6u2cyl::::res://aseprite/mountains front.png
 circle.png::CompressedTexture2D::9177502746269135669::1694597357::1695719261::1::::<><>::
@@ -19,7 +19,7 @@ key.gd::GDScript::-1::1697535296::0::1::::<>CharacterBody2D<>::
 key.tscn::PackedScene::1876337066333388897::1699920180::0::1::::<><>::uid://crhb0gxsi3yc5::::res://aseprite/key.png<>res://key.gd<>uid://r4fsabk4i5do::::res://smoke_particle.png<>res://unlockArea.gd<>uid://b8suonpwpyqwe::::res://sounds/key_ooz.ogg<>uid://cthaetcgexh10::::res://sounds/key_collected.wav
 main.gd::GDScript::-1::1699348228::0::1::::<>Node2D<>::
 main.tscn::PackedScene::2986754916674061956::1699920208::0::1::::<><>::res://main.gd<>uid://bquais52etjax::::res://map.tscn<>res://sendData.gd<>uid://d30wentgwcudp::::res://circle.png<>uid://ny06nmnh50mw::::res://player.tscn<>res://complete.gd<>uid://btqco0gk4io5m::::res://background.tscn
-map.tscn::PackedScene::3550745016331347955::1699920181::0::1::::<><>::uid://cij4qqdh1c1cu::::res://mist.tres<>uid://r4fsabk4i5do::::res://smoke_particle.png<>uid://dkjlp6vjve6nv::::res://aseprite/rock_tileset.png<>uid://dlaxv7hm1gp5m::::res://aseprite/proper_tileset_dirtgrass.png<>uid://dsbux165p5u8i::::res://aseprite/dark_dirt_tileset.png<>uid://d0k5kyaocbta4::::res://aseprite/dirt to stone.png<>uid://cn3p4oxit510d::::res://aseprite/dark_rock.png<>uid://cb1lt8vlqqb6d::::res://door.tscn<>uid://1y5856xxbwk4::::res://key.tscn<>uid://bq768rfexsww6::::res://falling_platform.tscn
+map.tscn::PackedScene::3550745016331347955::1699920576::0::1::::<><>::uid://cij4qqdh1c1cu::::res://mist.tres<>uid://r4fsabk4i5do::::res://smoke_particle.png<>uid://dkjlp6vjve6nv::::res://aseprite/rock_tileset.png<>uid://dlaxv7hm1gp5m::::res://aseprite/proper_tileset_dirtgrass.png<>uid://dsbux165p5u8i::::res://aseprite/dark_dirt_tileset.png<>uid://d0k5kyaocbta4::::res://aseprite/dirt to stone.png<>uid://cn3p4oxit510d::::res://aseprite/dark_rock.png<>uid://cb1lt8vlqqb6d::::res://door.tscn<>uid://1y5856xxbwk4::::res://key.tscn<>uid://bq768rfexsww6::::res://falling_platform.tscn
 menu.gd::GDScript::-1::1697533464::0::1::::<>Control<>::
 menu.tscn::PackedScene::6256018019545363029::1699920180::0::1::::<><>::res://menu.gd<>res://description.gd
 mist.tres::ParticleProcessMaterial::5354721727130621968::1699910410::0::1::::<><>::
@@ -31,7 +31,7 @@ sendData.gd::GDScript::-1::1697533464::0::1::::<>HTTPRequest<>::
 slutskärm.tscn::PackedScene::8464457924219096945::1699920180::0::1::::<><>::
 smoke_particle.png::CompressedTexture2D::1253413028006666108::1695904928::1696505863::1::::<><>::
 unlockArea.gd::GDScript::-1::1697520576::0::1::::<>Area2D<>::
-::res://aseprite/::1699920423
+::res://aseprite/::1699920431
  mountains.png::CompressedTexture2D::7031392723936577687::1695980399::1695980437::1::::<><>::
 breaking_stone.png::CompressedTexture2D::3396895275832829024::1697718850::1697718854::1::::<><>::
 cloud.png::CompressedTexture2D::8750736582635096051::1699920423::1699920431::1::::<><>::
@@ -123,7 +123,7 @@ cat_running6.png::CompressedTexture2D::2229740518861598216::1695634181::16957192
 cat_running7.png::CompressedTexture2D::6328833287135085609::1695634181::1695719261::1::::<><>::
 cat_running8.png::CompressedTexture2D::4254632429900099584::1695634181::1695719261::1::::<><>::
 cat_running9.png::CompressedTexture2D::5414600854489677280::1695634181::1695719261::1::::<><>::
-::res://sounds/::1699919680
+::res://sounds/::1699920652
 falling plattform stone.wav::AudioStreamWAV::4622324285736491067::1699909246::1699909249::1::::<><>::
 key_collected.wav::AudioStreamWAV::6120888185274987873::1699906963::1699907025::1::::<><>::
 key_ooz.ogg::AudioStreamOggVorbis::4741051371287448544::1699906963::1699910451::1::::<><>::
