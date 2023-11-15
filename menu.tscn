@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://cvepx5nr3d3qn"]
+[gd_scene load_steps=4 format=3 uid="uid://cvepx5nr3d3qn"]
 
 [ext_resource type="Script" path="res://menu.gd" id="1_5hrtl"]
+[ext_resource type="Theme" uid="uid://dakuxspjol5o8" path="res://Tema.tres" id="1_bttao"]
 [ext_resource type="Script" path="res://description.gd" id="2_1ccrr"]
 
 [node name="menu" type="Control" node_paths=PackedStringArray("confirmationBox")]
@@ -10,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_bttao")
 script = ExtResource("1_5hrtl")
 confirmationBox = NodePath("VBoxContainer/confirm")
 
@@ -43,9 +45,8 @@ Ditt mål är att klara spelet så fort som möjligt.
 När du klickar start kommer du inte kunna starta spelet igen,
 endast en inskickning per person är tillåten."
 horizontal_alignment = 1
-visible_characters = 0
 visible_characters_behavior = 1
-visible_ratio = 0.0
+visible_ratio = -0.00502513
 script = ExtResource("2_1ccrr")
 
 [node name="confirm" type="CheckBox" parent="VBoxContainer"]

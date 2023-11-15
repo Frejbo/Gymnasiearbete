@@ -115,7 +115,7 @@ func get_footstep_meta(leg:legs) -> Dictionary:
 	var tilemap := $"../../map/TileMap"
 	var local_point = tilemap.local_to_map(raycast.get_collision_point() / tilemap.scale)
 	var cell = tilemap.get_cell_source_id(1, local_point)
-	print(cell)
+	
 	if colors.has(cell):
 		return colors[cell]
 	else:

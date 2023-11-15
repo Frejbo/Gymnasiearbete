@@ -1,3 +1,4 @@
+Camera2D
 AudioStreamPlayer2D
 Timer
 AnimationPlayer
@@ -9,7 +10,6 @@ AnimatedSprite2D
 Sprite2D
 AudioStreamPlayer
 DampedSpringJoint2D
-Camera2D
 Area2D
 AnimationTree
 StaticBody2D

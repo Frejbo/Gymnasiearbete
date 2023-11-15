@@ -92,7 +92,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l0str"]
 size = Vector2(64, 144)
 
-[node name="door" type="StaticBody2D" groups=["Invert PosX"]]
+[node name="door" type="StaticBody2D" groups=["key_required"]]
 script = ExtResource("1_3q714")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

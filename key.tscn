@@ -517,7 +517,7 @@ _data = {
 "dissolve": SubResource("Animation_jg5pl")
 }
 
-[node name="Key" type="CharacterBody2D" groups=["Invert PosX"]]
+[node name="Key" type="CharacterBody2D"]
 collision_layer = 0
 collision_mask = 0
 script = ExtResource("1_wcyfu")
@@ -579,7 +579,6 @@ libraries = {
 script = ExtResource("4_vcr4h")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="unlockArea"]
-visible = false
 shape = SubResource("CircleShape2D_4v3xg")
 
 [node name="dissolve" type="AnimationPlayer" parent="unlockArea"]

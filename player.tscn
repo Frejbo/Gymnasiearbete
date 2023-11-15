@@ -405,7 +405,7 @@ stream_2/weight = 1.0
 size = Vector2(80, 74)
 
 [node name="player" type="CharacterBody2D"]
-position = Vector2(48, -96)
+position = Vector2(0, -65)
 script = ExtResource("1_yfnsc")
 MAX_SPEED = 500.0
 DEACCELERATION = 0.8
@@ -423,6 +423,7 @@ stream = SubResource("AudioStreamRandomizer_j11pn")
 volume_db = -5.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
+enabled = false
 zoom = Vector2(0.8, 0.8)
 position_smoothing_enabled = true
 position_smoothing_speed = 6.0

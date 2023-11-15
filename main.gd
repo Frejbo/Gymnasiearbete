@@ -7,7 +7,6 @@ func _ready():
 	if direction == "Vänster":
 		getAllNodes()
 		for n in nodes:
-			print(n)
 			if n.is_in_group("Invert ScaleX"):
 				n.scale.x *= -1
 			if n.is_in_group("Invert PosX"):

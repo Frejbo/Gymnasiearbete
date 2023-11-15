@@ -56,4 +56,8 @@ position = Vector2(0, -500)
 scale = Vector2(4, 4)
 texture = ExtResource("3_a64ag")
 
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(1000, -500)
+zoom = Vector2(0.3, 0.3)
+
 [connection signal="timeout" from="clouds/Timer" to="clouds" method="_on_timer_timeout"]
