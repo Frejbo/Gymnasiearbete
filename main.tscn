@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://btqco0gk4io5m" path="res://background.tscn" id="81_y8cg5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tx2xk"]
-radius = 134.0
+radius = 128.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qx0kd"]
 bg_color = Color(0, 0, 0, 0.588235)
@@ -125,6 +125,7 @@ texture = ExtResource("6_46dc4")
 lifetime = 3.0
 speed_scale = 0.2
 fixed_fps = 24
+visibility_rect = Rect2(-800, -800, 800, 800)
 trail_enabled = true
 trail_sections = 32
 trail_section_subdivisions = 16
