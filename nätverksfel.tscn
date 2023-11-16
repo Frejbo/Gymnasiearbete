@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://xe6bss1q2mnk"]
+[gd_scene load_steps=4 format=3 uid="uid://xe6bss1q2mnk"]
 
 [ext_resource type="Script" path="res://nätverksfel.gd" id="1_i4yyo"]
+[ext_resource type="Theme" uid="uid://dakuxspjol5o8" path="res://Tema.tres" id="2_dsdxa"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wwlkc"]
 bg_color = Color(0.27451, 0.160784, 0.141176, 1)
@@ -29,6 +30,7 @@ offset_right = 150.0
 offset_bottom = 55.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_dsdxa")
 theme_override_styles/panel = SubResource("StyleBoxFlat_wwlkc")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
@@ -49,6 +51,7 @@ grow_vertical = 2
 layout_mode = 2
 text = "Kunde inte skicka dina resultat
 Kontrollera internetanslutningen."
+horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
