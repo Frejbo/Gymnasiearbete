@@ -16,6 +16,7 @@ config/features=PackedStringArray("4.1", "Forward Plus")
 run/max_fps=60
 boot_splash/bg_color=Color(0.141176, 0.141176, 0.141176, 1)
 boot_splash/image="res://aseprite/splashscreen.png"
+config/icon="res://icon.png"
 
 [autoload]
 

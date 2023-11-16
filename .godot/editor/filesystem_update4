@@ -1,21 +1,2 @@
-res://main.tscn
-res://mist.tres
-res://slutskärm.tscn
-res://background.tscn
-res://dirt_particle.tscn
-res://key.tscn
 res://menu.tscn
-res://door.tscn
-res://player.tscn
-res://map.tscn
-res://falling_platform.tscn
-res://cloud.tscn
-res://Tema.tres
-res://main.gd
-res://animation.gd
-res://key.gd
-res://unlockArea.gd
-res://cloudManager.gd
-res://cam test.gd
-res://cloud.gd
-res://nätverksfel.tscn
+res://mist.tres
