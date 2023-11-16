@@ -3836,3 +3836,6 @@ position = Vector2(8416, -896)
 
 [node name="Falling Platform4" parent="." instance=ExtResource("10_oftbq")]
 position = Vector2(8800, -704)
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(17328, -1440)

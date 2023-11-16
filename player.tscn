@@ -423,7 +423,6 @@ stream = SubResource("AudioStreamRandomizer_j11pn")
 volume_db = -5.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
-enabled = false
 zoom = Vector2(0.8, 0.8)
 position_smoothing_enabled = true
 position_smoothing_speed = 6.0

@@ -40,10 +40,6 @@ z_index = 10
 motion_scale = Vector2(0.5, 0.5)
 script = ExtResource("3_2raf1")
 
-[node name="Timer" type="Timer" parent="clouds"]
-wait_time = 0.5
-autostart = true
-
 [node name="Front" type="ParallaxLayer" parent="."]
 motion_scale = Vector2(0.5, 0.5)
 motion_offset = Vector2(0, 256)
@@ -55,9 +51,3 @@ texture_repeat = 2
 position = Vector2(0, -500)
 scale = Vector2(4, 4)
 texture = ExtResource("3_a64ag")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-offset = Vector2(1000, -500)
-zoom = Vector2(0.3, 0.3)
-
-[connection signal="timeout" from="clouds/Timer" to="clouds" method="_on_timer_timeout"]

@@ -1,3 +1,4 @@
+Marker2D
 Camera2D
 AudioStreamPlayer2D
 Timer
@@ -24,7 +25,6 @@ TileMap
 GPUParticlesAttractorSphere3D
 CPUParticles2D
 WorldEnvironment
-Marker2D
 RigidBody2D
 CollisionPolygon2D
 Bone2D
