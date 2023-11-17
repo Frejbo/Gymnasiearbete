@@ -1,10 +1,2 @@
-res://menu.tscn
-res://mist.tres
-res://main.tscn
 res://map.tscn
-res://door.tscn
-res://key.tscn
-res://falling_platform.tscn
-res://player.tscn
-res://background.tscn
-res://cloud.tscn
+res://mist.tres
