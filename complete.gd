@@ -4,14 +4,16 @@ var startTime : float
 var time
 signal complete
 
-func _process(_delta):
-	if $"../player".velocity != Vector2.ZERO:
+func _input(event):
+	if event.is_action("left") or event.is_action("right"):
 		startTime = Time.get_ticks_msec()
-	set_process(false)
+		print("Started running: ", startTime/1000, " seconds.")
+		set_process_input(false)
 
 
 func _on_body_entered(body):
 	if !Globals.should_submit:
+		OS.alert("Du har redan skickat in ditt svar, stänger spelet.", "Du klarade spelet")
 		get_tree().quit()
 	
 	if body != $"../player":
