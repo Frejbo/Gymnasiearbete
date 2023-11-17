@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://player.gd" id="1_yfnsc"]
 [ext_resource type="Texture2D" uid="uid://ce13djk18txn1" path="res://aseprite/cat jumping/cat_jumping6.png" id="2_72uio"]
-[ext_resource type="AudioStream" uid="uid://douxdms7gfcc2" path="res://sounds/footsteps/Jump grass.wav" id="2_lsquh"]
+[ext_resource type="AudioStream" uid="uid://im60j6eyy6sv" path="res://sounds/footsteps/Grass/Jump.wav" id="2_g8f76"]
 [ext_resource type="AudioStream" uid="uid://cx7crvumwaojh" path="res://sounds/footsteps/Stone/Jump.wav" id="3_m3mxk"]
 [ext_resource type="Texture2D" uid="uid://5774if5c041r" path="res://aseprite/cat jumping/cat_jumping7.png" id="3_sgbra"]
 [ext_resource type="Texture2D" uid="uid://fgn84i868me0" path="res://aseprite/cat jumping/cat_jumping8.png" id="4_6cj2w"]
@@ -86,7 +86,7 @@
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_t4meg"]
 streams_count = 1
 random_pitch = 1.3
-stream_0/stream = ExtResource("2_lsquh")
+stream_0/stream = ExtResource("2_g8f76")
 stream_0/weight = 1.0
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_j11pn"]

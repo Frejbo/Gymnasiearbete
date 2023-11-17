@@ -1,5 +1,4 @@
-res://map.tscn
-res://mist.tres
 res://main.tscn
-res://menu.tscn
+res://mist.tres
+res://Tema.tres
 res://player.tscn
