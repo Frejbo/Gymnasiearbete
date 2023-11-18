@@ -11,8 +11,6 @@ func _enter_tree():
 
 func _on_start_pressed():
 	if confirmationBox.button_pressed:
-		var file = FileAccess.open("user://collected", FileAccess.WRITE)
-		file.close()
 		get_tree().change_scene_to_packed(game)
 	else:
 		for i in range(2):

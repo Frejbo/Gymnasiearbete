@@ -1,3 +1,4 @@
+Timer
 AnimationPlayer
 AudioStreamPlayer
 AudioStreamPlayer2D
@@ -29,4 +30,3 @@ CollisionPolygon2D
 Bone2D
 Skeleton2D
 CanvasGroup
-Panel

@@ -3766,7 +3766,7 @@ visibility_rect = Rect2(-400, -400, 800, 800)
 [node name="TileMap" type="TileMap" parent="." groups=["Invert ScaleX"]]
 z_index = 1
 texture_filter = 1
-scale = Vector2(4, 4)
+scale = Vector2(4.0008, 3.99257)
 tile_set = SubResource("TileSet_yc70p")
 format = 2
 layer_0/name = "Background"

@@ -1,8 +1,9 @@
-[gd_scene load_steps=81 format=3 uid="uid://ny06nmnh50mw"]
+[gd_scene load_steps=86 format=3 uid="uid://ny06nmnh50mw"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_yfnsc"]
 [ext_resource type="Texture2D" uid="uid://ce13djk18txn1" path="res://aseprite/cat jumping/cat_jumping6.png" id="2_72uio"]
 [ext_resource type="AudioStream" uid="uid://banjmncqeu6hr" path="res://sounds/footsteps/Jump.wav" id="2_ww4sj"]
+[ext_resource type="Script" path="res://cam.gd" id="3_q3snb"]
 [ext_resource type="Texture2D" uid="uid://5774if5c041r" path="res://aseprite/cat jumping/cat_jumping7.png" id="3_sgbra"]
 [ext_resource type="Texture2D" uid="uid://fgn84i868me0" path="res://aseprite/cat jumping/cat_jumping8.png" id="4_6cj2w"]
 [ext_resource type="Texture2D" uid="uid://d0l6c4cjavq7i" path="res://aseprite/cat idle/cat_idleshaded1.png" id="5_l2v42"]
@@ -77,6 +78,7 @@
 [ext_resource type="AudioStream" uid="uid://drqje5vjt3x10" path="res://sounds/footsteps/Grass/landing.wav" id="75_3indk"]
 [ext_resource type="AudioStream" uid="uid://bxn5kdsf5x2t2" path="res://sounds/footsteps/Grass/footstep2.wav" id="76_aayls"]
 [ext_resource type="AudioStream" uid="uid://darrdw6x7qmei" path="res://sounds/footsteps/Grass/footstep3.wav" id="77_kfbhe"]
+[ext_resource type="Script" path="res://a.gd" id="78_y6wjg"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1a0k2"]
 animations = [{
@@ -361,6 +363,68 @@ stream_0/weight = 1.0
 stream_1/stream = ExtResource("77_kfbhe")
 stream_1/weight = 1.0
 
+[sub_resource type="Animation" id="Animation_lbpud"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:skew")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_a5vsd"]
+resource_name = "p"
+loop_mode = 1
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:skew")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.25, 0.75),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-0.261799, 0.261799]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.25, 0.75),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 0, 0, 1), Color(0.356863, 0.615686, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0l1ud"]
+_data = {
+"RESET": SubResource("Animation_lbpud"),
+"p": SubResource("Animation_a5vsd")
+}
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r657i"]
 size = Vector2(80, 74)
 
@@ -379,9 +443,11 @@ stream = ExtResource("2_ww4sj")
 volume_db = -15.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.8, 0.8)
+skew = 0.413643
+ignore_rotation = false
+zoom = Vector2(0.7, 0.7)
 position_smoothing_enabled = true
-position_smoothing_speed = 6.0
+script = ExtResource("3_q3snb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["Invert ScaleX"]]
 texture_filter = 1
@@ -416,6 +482,13 @@ volume_db = -8.0
 
 [node name="footstep" type="AudioStreamPlayer" parent="AnimatedSprite2D"]
 volume_db = -10.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite2D"]
+speed_scale = 1.4
+libraries = {
+"": SubResource("AnimationLibrary_0l1ud")
+}
+script = ExtResource("78_y6wjg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 27)

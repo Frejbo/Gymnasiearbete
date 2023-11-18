@@ -1,3 +1,26 @@
-[gd_resource type="AudioBusLayout" format=3 uid="uid://qhpxjdy73bsy"]
+[gd_resource type="AudioBusLayout" load_steps=4 format=3 uid="uid://qhpxjdy73bsy"]
+
+[sub_resource type="AudioEffectStereoEnhance" id="AudioEffectStereoEnhance_ag36b"]
+resource_name = "StereoEnhance"
+pan_pullout = 1.8
+time_pullout_ms = 10.0
+surround = 0.5
+
+[sub_resource type="AudioEffectReverb" id="AudioEffectReverb_fkljq"]
+resource_name = "Reverb"
+predelay_feedback = 0.7
+room_size = 0.1
+damping = 0.0
+hipass = 1.0
+wet = 1.0
+
+[sub_resource type="AudioEffectSpectrumAnalyzer" id="AudioEffectSpectrumAnalyzer_wrerb"]
+resource_name = "SpectrumAnalyzer"
 
 [resource]
+bus/0/effect/0/effect = SubResource("AudioEffectStereoEnhance_ag36b")
+bus/0/effect/0/enabled = false
+bus/0/effect/1/effect = SubResource("AudioEffectReverb_fkljq")
+bus/0/effect/1/enabled = true
+bus/0/effect/2/effect = SubResource("AudioEffectSpectrumAnalyzer_wrerb")
+bus/0/effect/2/enabled = true
